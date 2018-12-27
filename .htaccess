@@ -1,0 +1,19 @@
+
+//Rewrite to www
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^mangan.io[nc]
+RewriteRule ^(.*)$ http://www.mangan.io/$1 [r=301,nc]
+
+//Prevent viewing of .htaccess file
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+//Prevent directory listings
+Options All -Indexes
+ 
+ Header set Access-Control-Allow-Origin: *
+Header set Access-Control-Allow-Headers: content-type
+Header set Access-Control-Allow-Methods: *
