@@ -4,6 +4,8 @@ Options +FollowSymLinks
 RewriteEngine on
 RewriteCond %{HTTP_HOST} ^mangan.io[nc]
 RewriteRule ^(.*)$ http://www.mangan.io/$1 [r=301,nc]
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Credentials true
 
 //Prevent viewing of .htaccess file
 <Files .htaccess>
@@ -13,7 +15,3 @@ deny from all
 
 //Prevent directory listings
 Options All -Indexes
- 
- Header set Access-Control-Allow-Origin: *
-Header set Access-Control-Allow-Headers: content-type
-Header set Access-Control-Allow-Methods: *
