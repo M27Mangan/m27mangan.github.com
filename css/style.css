@@ -1803,7 +1803,7 @@ hr {
 /* Spacing */
 
 .section {
-    padding: 90px 0;
+    /* padding: 90px 0; */
 }
 
 .section-cta{
@@ -2753,6 +2753,11 @@ video#bgvid {
 	color: #fff;
 	margin-bottom: 50px;
 }
+@media (max-width:768px) {
+    #home-section .home-text h1{
+      font-size: 3em;
+    }
+	}
 .hometxt {
   /*background-color: rgba(0,0,0,0.25) !important;*/
 }
