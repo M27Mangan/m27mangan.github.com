@@ -213,21 +213,23 @@
        var name = $('input#name').val()
        var email = $('input#email').val()
        var title = $('input#title').val()
-       var message = $('textarea#message').val()
+       var budget = $('textarea#budget').val()
+       var detail = $('textarea#detail').val()
        var firstName = name // For Success/Failure Message
        // Check for white space in name for Success/Fail message
        if (firstName.indexOf(' ') >= 0) {
          firstName = name.split(' ').slice(0, -1).join(' ')
        }
        $.ajax({
-         url: 'https://script.google.com/macros/s/AKfycbzD5JrABBCgBt3aRSROjr3DR9TL2H_mKd93DgQWC8dEjpELssE/exec',
+         url: 'https://script.google.com/macros/s/AKfycbyR-rCqDpBzP9zzkO1A8fqX3cRm8P9722R0YPQFyF41C0LG17Q/exec',
          // url: "contact.php",
          type: 'POST',
          data: {
            name: name,
            title: title,
            email: email,
-           message: message
+           budget: budget,
+           detail: detail
          },
          cache: false,
          success: function () {
