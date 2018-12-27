@@ -9,14 +9,22 @@
         <title>❱ Matt Mangan ❱ Developer ▪ Skier ▪ Learner</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-        <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/ >
         <link rel="stylesheet" href="css/bulma.css">
+            <!-- Components -->
+          <link href="css/animate.css" rel="stylesheet">
+          <link href="css/etline.css" rel="stylesheet">
+          <link href="css/animsition.min.css" rel="stylesheet">
+          <link href="css/magnific-popup.css" rel="stylesheet">
+          <link href="css/simpletextrotator.css" rel="stylesheet">
+
+
+        <link rel="stylesheet" href="css/style.css">
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-
+        <!-- <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script> -->
+      
         <style>
  @import url('https://fonts.googleapis.com/css?family=Roboto:300');
    *,
@@ -92,53 +100,414 @@
  </style>
 
     </head>
-    <body>
+    <body id="top" class="has-navbar-fixed-top">
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+          <!-- Page Loader -->
+          <div class="page-loader">
+              <div class="loader"></div>
+          </div>
+          <!-- End Page Loader -->
+          
+          <div class="animsition">
+              <!-- Navigation -->
+              <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+                  <div class="navbar-brand">
+                      <a class="navbar-item" href="https://mangan.io">
+                        <img src="img/logo_sm.png"  height="28" alt="Manganite Consulting logo">
+                      </a>
+                  
+                      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                      </a>
+                    </div>
+                    <div class="navbar-end" id="navbar-collapse">
+                          <a class="navbar-item" data-scroll href="#services">Services</a>
+                              <!--<a data-scroll href="#contact">Contact</a>-->
+                              <a class="navbar-item" data-scroll href="#contact">FREE QUOTE</a>
+                        <!-- <div class="navbar-item">
+                          <div class="buttons">
+                            <a class="button is-primary">
+                              <strong>Sign up</strong>
+                            </a>
+                            <a class="button is-light">
+                              Log in
+                            </a>
+                          </div>
+                        </div> -->
+                      </div>
 
-        <section class="hero is-fullheight is-primary" style="background-color:#1d1d1d;">
-          <div class="hero-head">
-            <div class="container">
-              <div class="tabs is-centered">
-                <a href="javascript:void(0)" class="logo">
-                  <div class="m">
-                    <svg class="mark open" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="500px" height="387.141px" viewBox="0 0 500 387.141" enable-background="new 0 0 500 387.141" xml:space="preserve">
-                      <path class="arrow" fill="#E85F3D" d="M0,0h118.576L250,211.419L381.442,0H500L391.441,173.572L250.717,387.141h-2.849L108.576,175.722L0,0z"></path>
-                    </svg>
-                    <svg class="mark close" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="500px" height="387.141px" viewBox="0 0 500 387.141" enable-background="new 0 0 500 387.141" xml:space="preserve">
-                      <path class="arrow" fill="#E85F3D" d="M0,0h118.576L250,211.419L381.442,0H500L391.441,173.572L250.717,387.141h-2.849L108.576,175.722L0,0z"></path>
-                    </svg>
-                    <div class="bar one"></div>
-                    <div class="bar two"></div>
+
+                 
+              </nav>
+              <!-- End Navigation -->
+          
+              <!-- Home Section -->
+              <div id="home-section" style="background-image:url('img/7z8huvfafel11.jpg');" > 
+              <!-- <div id="home-section" data-stellar-background-ratio="0.5"> -->
+                  <!-- <video playsinline autoplay muted loop poster="polina.jpg" id="bgvid"> -->
+                      <!-- <source src="img/vid.webm" type="video/webm"> -->
+                      <!-- <source src="https://player.vimeo.com/video/253803256?color=f7f7f7&title=0&byline=0&portrait=0" type="video/mp4"> -->
+                  <!-- </video> -->
+
+                 
+                  <!-- <div class="gradient-overlay"></div> -->
+                  <div class=" height-full">
+                      <!-- Hero Content -->
+                      <div class="home-content">
+                          <!-- <div class="hero-head">
+                              <div class="container">
+                                <div class="tabs is-centered">
+                                  <a href="javascript:void(0)" class="logo">
+                                    <div class="m">
+                                      <svg class="mark open" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="500px" height="387.141px" viewBox="0 0 500 387.141" enable-background="new 0 0 500 387.141" xml:space="preserve">
+                                        <path class="arrow" fill="#E85F3D" d="M0,0h118.576L250,211.419L381.442,0H500L391.441,173.572L250.717,387.141h-2.849L108.576,175.722L0,0z"></path>
+                                      </svg>
+                                      <svg class="mark close" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="500px" height="387.141px" viewBox="0 0 500 387.141" enable-background="new 0 0 500 387.141" xml:space="preserve">
+                                        <path class="arrow" fill="#E85F3D" d="M0,0h118.576L250,211.419L381.442,0H500L391.441,173.572L250.717,387.141h-2.849L108.576,175.722L0,0z"></path>
+                                      </svg>
+                                      <div class="bar one"></div>
+                                      <div class="bar two"></div>
+                                    </div>
+                                  </a>
+                                </div>
+                              </div>
+                            </div> -->
+                          <a class="homebutton" data-scroll href="#about">
+                              <!-- <i class="icon ion-code-download"></i> -->
+                              <!-- <div class="scroll-down">
+                                  <div class="mouse">
+                                    <div class="scroll"></div>
+                                  </div>
+                              </div> -->
+                              <div class="mouse"></div>
+                          </a>
+                          <div class="home-text">
+                              <h1><span class="hometxt">MANGANITE CONSULTING</span></br>
+                                  <div class="rotating-text">
+                                      <div class="rotate">WEB,SEO,BLOG,ECOMMERCE</div>
+                                  </div>
+                              </h1>
+                              <!-- <h2>PROFESSIONAL WEB DEVELOPMENT SERVICES</h2> -->
+                              <!-- <a class="btn btn-b-red btn-lg home-btn hvr-ripple-out" data-scroll href="#about">
+                                  See More
+                              </a> -->
+                          </div>
+                      </div>
+                      <!-- End Hero Content -->
                   </div>
-                </a>
               </div>
-            </div>
+              <!-- End Intro Section -->
+          
+              <!-- About Section -->
+              <section id="about" class="section bg-light">
+                  <div class="container is-fluid">
+                      <div class="columns">
+                          <div class="column is-half bg-image-about wow fadeIn" data-wow-delay=".4s">
+                              <img src="img/iPad-Air.png" alt="ipad" />
+                          </div><!-- /.col-md-6 -->
+                          <div class="column is-half col-md-offset-6 side-text wow fadeIn" data-wow-delay=".4s">
+                              <div class="heading text-left">
+                                  <h2 class="title">Custom development for entrepreneurs, businesses and organizations</h2>
+                              </div>
+                              <p class="description">
+                                  Whether it's for your business, organization, or personal brand, having an online presence has never been more important or more beneficial. A well-crafted website can immediately increase Relevance, Recognition, and Differentiation - three core drivers of successful branding.
+                              </p>
+                              <p class="description">
+                                  At Manganite Consulting, you don't need a large corporate budget for a consultation. Your budget determines the scope of the project, not the other way around. We believe in solutions for all.
+                              </p>
+                              <a class="btn btn-b-dark btn-lg" data-scroll href="#contact" target="_blank">FREE QUOTE</a>
+                          </div><!-- /.col-md-6 -->
+                      </div><!-- /.row -->
+                  </div><!-- /.container-fluid -->
+              </section>
+              <!-- End About Section -->
+          
+              <!-- Services Section -->
+              <section id="services" class="section bg-light">
+                  <div class="container">
+                      <div class="columns heading">
+                          <div class="column wow fadeIn" data-wow-delay=".4s">
+                              <h2 class="title">Services</h2>
+                              <p class="sub-title">Craft your online presence</p>
+                          </div><!-- /.col-md-12 -->
+                      </div><!-- /.row .heading -->
+                      <div class="columns is-mobile is-multiline">
+                          <!-- CONTENT BOX -->
+                          <div class="content-col column is-one-third-tablet is-half-mobile wow fadeIn" data-wow-delay=".4s">
+                              <div class="content-box-icon">
+                                  <i class="icon-genius"></i>
+                              </div>
+                              <div class="content-box">
+                                  <h5 class="content-box-title">Cutting Edge Technology</h5>
+                                  <div class="content-box-text">
+                                      We develop using full-stack JavaScript - one of the most popular and powerful programming languages in the world. JavaScript is the scripting language of the World Wide Web and is already built into all major web browsers, which makes it the natural choice for web development. Your project is an investment - using JavaScript helps 'future-proof' that investment. JavaScript is used by Google, Microsoft, IBM, Groupon, LinkedIn, Netflix, PayPal, and Yahoo!, just to name a few.
+                                  </div>
+                              </div>
+                          </div><!-- /CONTENT BOX -->
+          
+                          <!-- CONTENT BOX -->
+                          <!-- <div class="content-col column is-one-third-tablet is-half-mobile wow fadeIn" data-wow-delay=".5s">
+                              <div class="content-box-icon">
+                                  <i class="icon-caution"></i>
+                              </div>
+                              <div class="content-box">
+                                  <h5 class="content-box-title font-alt">Proprietary Code and Plunder</h5>
+                                  <div class="content-box-text">
+                                    
+                                      JAWS stands for Just Another Wordpress Site. Wordpress is a fine choice for an anonymous blog, but if you are trying to build a brand, an online presence, or represent your organization, then Wordpress is a poor choice. The outdated styling and interface is clunky and the plugins, while seemingly helpful, are vulnerable to common Web attacks(notably including 7 of the Top 10 E-Commerce plugins). It's built to run on PHP 5.2 which was released in 2006...<strong>10 years ago</strong>. It's been unsupported and has not received any security patches since 2011, <strong>5 years ago</strong>.
+                                  </div>
+                              </div>
+                          </div> -->
+                          <!-- /CONTENT BOX -->
+          
+                          <!-- CONTENT BOX -->
+                          <div class="content-col column is-one-third-tablet is-half-mobile wow fadeIn" data-wow-delay=".6s">
+                              <div class="content-box-icon">
+                                  <i class="icon-mobile"></i>
+                              </div>
+                              <div class="content-box">
+                                  <h5 class="content-box-title font-alt">Responsive design</h5>
+                                  <div class="content-box-text">
+                                      Mobile devices have eclipsed computers as the most popular device for browsing the internet. It is critical for your website and/or web application to not only render well on both a computer and a mobile device, but also provide the same user experience. One of our core development principles is a 'mobile-first' design philosophy - to ensure that the User Interface(UI) and, accordingly, the User Experience(UX), transition seamlessly from desktop to mobile without any loss to functionality or content. Ideally, the experience should be consistent whether you're viewing it on a 5" phone screen, a 10" tablet, a 17" computer screen, or a 50" Internet-enabled television.
+                                  </div>
+                              </div>
+                          </div><!-- /CONTENT BOX -->
+          
+                          <!-- CONTENT BOX -->
+                          <div class="content-col column is-one-third-tablet is-half-mobile wow fadeIn" data-wow-delay=".7s">
+                              <div class="content-box-icon">
+                                  <i class="icon-heart"></i>
+                              </div>
+                              <div class="content-box">
+                                  <h5 class="content-box-title font-alt">Inclusive, not Exclusive</h5>
+                                  <div class="content-box-text">
+                                      We firmly believe in the democratization of technology. With the recent growth of cloud computing, hosting, and storage, more solutions are available than ever before, which allows us to utilize these solutions for clients of all sizes. We have solutions to fit every budget. Don't have a budget, or, are a bootstrapping entrepreneur intent on doing it yourself? Well we not only salute you, but would be more than happy to give suggestions that will make your quest easier. <!--Price? A cup of coffee. We believe in solutions for <strong>all</strong>.-->
+                                  </div>
+                              </div>
+                          </div><!-- /CONTENT BOX -->
+          
+                          <!-- CONTENT BOX -->
+                          <div class="content-col column is-one-third-tablet is-half-mobile wow fadeIn" data-wow-delay=".8s">
+                              <div class="content-box-icon">
+                                  <i class="icon-bargraph"></i>
+                              </div>
+                              <div class="content-box">
+                                  <h5 class="content-box-title font-alt">SEO/Internet Marketing</h5>
+                                  <div class="content-box-text">
+                                      Contrary to the popular(and profitable) dogma surrounding 'SEO Marketing', we believe the best strategies are clear-cut and fundamental: clean code, good content, and quality back-links. Black-hat SEO, spamdexing, and other 'techniques' to artificially increase a site's rank in search results are not a valid marketing strategy. Depending too heavily on search engine traffic and/or trying to 'game' search algorithms is not only unethical and dangerous(violation will get your site removed), it's also foolish. Search engine algorithms change often. In 2010 alone, Google made over 500 algorithm changes – that's almost 1.5 <strong>per day</strong>.
+                                  </div>
+                              </div>
+                          </div><!-- /CONTENT BOX -->
+          
+                          <!-- CONTENT BOX -->
+                          <div class="content-col column is-one-third-tablet is-half-mobile wow fadeIn" data-wow-delay=".9s">
+                              <div class="content-box-icon">
+                                  <i class="icon-happy"></i>
+                              </div>
+                              <div class="content-box">
+                                  <h5 class="content-box-title font-alt">Support Consulting</h5>
+                                  <div class="content-box-text">
+                                      Using a 'Super Amazing Website Builder' on Squarespace, Wix, Shopify, Wordpress, etc. to do-it-yourself, but would love to ask a developer a few quick questions or pick their brain for best practices/tips/advice? Reach out to us and we'll gladly answer your questions.
+                                  </div>
+                              </div>
+                          </div><!-- /CONTENT BOX -->
+                      </div><!-- /.row -->
+                  </div><!-- /.container -->
+              </section>
+              <!-- End Services Section -->
+          
+              <!-- Counter Section -->
+              <section class="section parallax solid-overlay" style="background-image: url(img/57.jpg);" data-stellar-background-ratio="0.7">
+                  <div class="container" style="position: initial;">
+                      <div class=""></div><!-- Image Overlay -->
+                      <div class="columns is-mobile">
+                          <div class="column is-one-quarter-tablet is-half-mobile">
+                              <div class="counter">
+                                  <div class="counter-icon">
+                                      <i class="icon-profile-male"></i>
+                                  </div>
+                                  <div class="counter-info">
+                                      <span class="timer">3</span>
+                                      <h5>Developers</h5>
+                                  </div>
+                              </div>
+                          </div><!-- /.col-md-3 -->
+                          <div class="column is-one-quarter-tablet is-half-mobile">
+                              <div class="counter">
+                                  <div class="counter-icon">
+                                      <i class="icon-alarmclock"></i>
+                                  </div>
+                                  <div class="counter-info">
+                                      <span class="timer">398</span>
+                                      <h5>Hours Worked</h5>
+                                  </div>
+                              </div>
+                          </div><!-- /.col-md-3 -->
+                          <div class="column is-one-quarter-tablet is-half-mobile">
+                              <div class="counter">
+                                  <div class="counter-icon">
+                                      <i class="icon-browser"></i>
+                                  </div>
+                                  <div class="counter-info">
+                                      <span class="timer">12</span>
+                                      <h5>Projects Finished</h5>
+                                  </div>
+                              </div>
+                          </div><!-- /.col-md-3 -->
+                          <div class="column is-one-quarter-tablet is-half-mobile">
+                              <div class="counter">
+                                  <div class="counter-icon">
+                                      <i class="icon-heart"></i>
+                                  </div>
+                                  <div class="counter-info">
+                                      <span class="timer">47</span>
+                                      <h5>Hours Donated</h5>
+                                  </div>
+                              </div>
+                          </div><!-- /.col-md-3 -->
+                      </div><!-- /.row -->
+                  </div><!-- /.container -->
+              </section>
+              <!-- End Counter Section -->
+          
+              <!-- Call To Action -->
+              <section class="section-cta solid">
+                  <div class="container">
+                      <div class="columns">
+                          <div class="column is-three-quarters wow fadeIn" data-wow-delay=".4s">
+                              <h5>We don't believe in pressure, upselling, or jargon - we prefer ideas, conversation, and laughter. A bit refreshing, isn't it?
+                          </div>
+                          <div class="column is-one-quarter">
+                              <a class="btn btn-b-white" data-scroll href="#contact" target="_blank">CONTACT NOW</a>
+                          </div>
+                      </div>
+                  </div>
+              </section>
+              <!-- End Call To Action  -->
+          
+              <!-- Contact Section -->
+              <section id="contact" class="bg-light dark">
+                  <div class="container is-fluid">
+                      <div class="columns contact-row is-mobile">
+                          <div class="column is-one-third-tablet is-offset-1-tablet  col-xs-12 col-md-4 col-md-offset-1 wow fadeIn" data-wow-delay=".4s">
+                             <div id="contact-us" class="contact-info">
+                                <div class="heading">
+                                    <div class="column is-full col-md-12">
+                                        <h2 class="title">Contact Us</h2>
+                                        <p class="sub-title">Free Consultation and Estimate</p>
+                                    </div><!-- /.col-md-12 -->
+                                </div><!-- /.row .heading-->
+            
+                                <h3>let us buy you a coffee</h3>
+                                <p>Custom development solutions for businesses and organizations of all sizes. NDA's welcome.</p>
+                                <div class="">
+                                    <div class=" column is-full col-md-12">
+                                        <div class="contact-box">
+                                            <div class="contact-title">
+                                                <i class="icon-pencil"></i>
+                                            </div>
+                                            <div>
+                                                <p class="contact-title"><a href="mailto:matt@mangan.io">matt@mangan.io</a></p>
+                                            </div>
+                                        </div><!-- /.contact-box -->
+                                    </div><!-- /.col-md-12 -->
+                                    <div class="column is-full">
+                                        <div class="contact-box">
+                                            <p class="contact-title"><i class="icon-map-pin"></i>Rochester, New York</p>
+                                        </div><!-- /.contact-box -->
+                                    </div><!-- /.col-md-12 -->
+                                </div><!-- /.row -->
+                             </div>
+                          </div><!-- /.col-md-4 -->
+                          <div class="column is-half-tablet is-offset-1-tablet col-xs-12 col-md-6 col-md-offset-1">
+                              <!-- <div class="light-overlay"></div> -->
+                              <div class=" light-overlay"  style="background: url(img/restaurant-coffee-cup-table-sml.jpg); position: relative; ">
+                                  <form name="sentMessage" id="contactForm" novalidate class="contact-form">
+                                      <div class="control-group">
+                                          <div class="form-group col-md-12 controls">
+                                              <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+                                              <p class="help-block text-danger"></p>
+                                          </div>
+                                      </div>
+                                      <div class="control-group">
+                                          <div class="form-group col-md-12 controls">
+                                              <input type="email" class="form-control" placeholder="E-mail" id="email" required data-validation-required-message="Please enter your email address.">
+                                              <p class="help-block text-danger"></p>
+                                          </div>
+                                      </div>
+                                      <div class="control-group">
+                                          <div class="form-group col-md-12 controls">
+                                              <input type="text" class="form-control" placeholder="Subject" id="title" required data-validation-required-message="Please enter a title.">
+                                              <input type="text" name="_gotcha" style="display:none" />
+                                              <p class="help-block text-danger"></p>
+                                          </div>
+                                      </div>
+                                      <div class="control-group">
+                                          <div class="form-group col-md-12 controls">
+                                              <textarea rows="1" class="form-control" placeholder="Desired Budget" id="budget" required data-validation-required-message="Please enter a desired budget."></textarea>
+                                              <p class="help-block text-danger"></p>
+                                          </div>
+                                      </div>
+                                      <div class="control-group">
+                                          <div class="form-group col-md-12 controls">
+                                              <textarea rows="4" class="form-control" placeholder="Project Details" id="detail" required data-validation-required-message="Please enter some details about your project."></textarea>
+                                              <p class="help-block text-danger"></p>
+                                          </div>
+                                      </div>
+                                      <br>
+                                      <div id="success"></div>
+                                      <div class="">
+                                          <div class="column is-full col-md-12 margin-top40">
+                                              <button type="submit" class="btn btn-b-dark">Submit</button>
+                                          </div>
+                                      </div>
+                                  </form>
+                              </div>
+                          </div><!-- /.col-md-6 -->
+                      </div><!-- /.row -->
+                  </div><!-- /.container -->
+              </section>
+              <!-- End Contact Section -->
+          
+              <!-- Footer Section -->
+              <section id="footer">
+                  <div class="container">
+                      <div class="columns">
+                          <div class="column is-full col-md-12 bottom-line wow fadeIn" data-wow-delay=".4s">
+                              <h6>Made with <i class="fa fa-heart-o" aria-hidden="true"></i> in Rochester, NY</h6>
+                              <p>© Copyright <span class="currentYear">2019</span> <span class="bold">Manganite Consulting</span> All rights reserved.</p>
+                              <!-- End Social -->
+                          </div><!-- /.col-md-12 -->
+                      </div><!-- /.row -->
+                  </div><!-- /.container -->
+              </section>
+              <!-- End Footer Section -->
           </div>
 
-          <div class="hero-body">
-            <div class="container has-text-centered">
-              <h3 class="title is-2">
+        <!-- JS -->
+        <!-- <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script> -->
 
-                <a href="https://www.linkedin.com/in/mangan27/">
-                  <strong>Pushing to production</strong> in <strong>Spring 2018</strong> <sup><small>Hope <sup><small> it's not <sup><small>on a Friday</small></sup></small></sup></small></sup>
-                </a>
-              </h3>
-              <h4 class="subtitle is-4">In the meantime, reach out to me on <a href="https://www.linkedin.com/in/mangan27/" target="_blank" rel="noreferrer noopener" class=""> [&nbsp;<i class="fa fa-linkedin"></i>&nbsp;]</a></h4>
-            </div>
-          </div>
-
-          <div class="hero-foot">
-            <div class="container">
-              <div class="tabs is-centered">
-
-              </div>
-            </div>
-          </div>
-        </section>
-
-
+        <script src="js/jquery.min.js"></script>
+        <script src="js/cbpAnimatedHeader.js"></script>
+        <script src="js/classie.js"></script>
+        <script src="js/jqBootstrapValidation.js"></script>
+        <script src="js/jquery.easing.1.3.js"></script>
+        <script src="js/jquery.counterup.min.js"></script>
+        <script src="js/smooth-scroll.js"></script>
+        <script src="js/waypoints.min.js"></script>
+        <script src="js/isotope.pkgd.min.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/jquery.animsition.min.js"></script>
+        <script src="js/jquery.stellar.min.js"></script>
+        <!-- <script src="js/jquery.fitvids.js"></script>
+        <script src="js/owl.carousel.js"></script> -->
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/jquery.simple-text-rotator.min.js"></script>
+        <script src="js/all.js"></script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-50021621-1"></script>
         <script>
