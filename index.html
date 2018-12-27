@@ -11,6 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/ >
         <link rel="stylesheet" href="css/bulma.css">
+
             <!-- Components -->
           <link href="css/animate.css" rel="stylesheet">
           <link href="css/etline.css" rel="stylesheet">
@@ -22,7 +23,6 @@
         <link rel="stylesheet" href="css/style.css">
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
         <!-- <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script> -->
       
         <style>
@@ -435,32 +435,32 @@
                                   <form name="sentMessage" id="contactForm" novalidate class="contact-form">
                                       <div class="control-group">
                                           <div class="form-group col-md-12 controls">
-                                              <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+                                              <input type="text" class="form-control" placeholder="Name" id="name" name="name" required data-validation-required-message="Please enter your name.">
                                               <p class="help-block text-danger"></p>
                                           </div>
                                       </div>
                                       <div class="control-group">
                                           <div class="form-group col-md-12 controls">
-                                              <input type="email" class="form-control" placeholder="E-mail" id="email" required data-validation-required-message="Please enter your email address.">
+                                              <input type="email" class="form-control" placeholder="E-mail" id="email" name="email" required data-validation-required-message="Please enter your email address.">
                                               <p class="help-block text-danger"></p>
                                           </div>
                                       </div>
                                       <div class="control-group">
                                           <div class="form-group col-md-12 controls">
-                                              <input type="text" class="form-control" placeholder="Subject" id="title" required data-validation-required-message="Please enter a title.">
+                                              <input type="text" class="form-control" placeholder="Subject" id="title" name="title" required data-validation-required-message="Please enter a title.">
                                               <input type="text" name="_gotcha" style="display:none" />
                                               <p class="help-block text-danger"></p>
                                           </div>
                                       </div>
                                       <div class="control-group">
                                           <div class="form-group col-md-12 controls">
-                                              <textarea rows="1" class="form-control" placeholder="Desired Budget" id="budget" required data-validation-required-message="Please enter a desired budget."></textarea>
+                                              <textarea rows="1" class="form-control" placeholder="Desired Budget" id="budget" name="budget" required data-validation-required-message="Please enter a desired budget."></textarea>
                                               <p class="help-block text-danger"></p>
                                           </div>
                                       </div>
                                       <div class="control-group">
                                           <div class="form-group col-md-12 controls">
-                                              <textarea rows="4" class="form-control" placeholder="Project Details" id="detail" required data-validation-required-message="Please enter some details about your project."></textarea>
+                                              <textarea rows="4" class="form-control" placeholder="Project Details" id="detail" name="detail" required data-validation-required-message="Please enter some details about your project."></textarea>
                                               <p class="help-block text-danger"></p>
                                           </div>
                                       </div>
@@ -496,8 +496,22 @@
 
         <!-- JS -->
         <!-- <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script> -->
-
         <script src="js/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/formdata-polyfill@3.0.13/formdata.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@3.0.0/dist/fetch.umd.min.js"></script>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyR-rCqDpBzP9zzkO1A8fqX3cRm8P9722R0YPQFyF41C0LG17Q/exec'
+            const form = document.forms['sentMessage']
+          
+            form.addEventListener('submit', e => {  
+                e.preventDefault()  
+                fetch(scriptURL, { method: 'POST', body: new FormData(form)})  
+                    .then(response => console.log('Success!', response))  
+                    .catch(error => console.error('Error!', error.message))  
+                })  
+          </script>
+        
         <script src="js/cbpAnimatedHeader.js"></script>
         <script src="js/classie.js"></script>
         <script src="js/jqBootstrapValidation.js"></script>
