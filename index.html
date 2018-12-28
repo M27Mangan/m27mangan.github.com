@@ -432,7 +432,7 @@
                           <div class="column is-half-tablet is-offset-1-tablet col-xs-12 col-md-6 col-md-offset-1">
                               <!-- <div class="light-overlay"></div> -->
                               <div class=" light-overlay"  style="background: url(img/restaurant-coffee-cup-table-sml.jpg); position: relative; ">
-                                  <form name="sentMessage" id="contactForm" novalidate class="contact-form">
+                                  <form name="sentMessage" id="contactForm" novalidate class="contact-form" action="https://script.google.com/macros/s/AKfycbyR-rCqDpBzP9zzkO1A8fqX3cRm8P9722R0YPQFyF41C0LG17Q/exec">
                                       <div class="control-group">
                                           <div class="form-group col-md-12 controls">
                                               <input type="text" class="form-control" placeholder="Name" id="name" name="name" required data-validation-required-message="Please enter your name.">
@@ -501,15 +501,15 @@
         <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@3.0.0/dist/fetch.umd.min.js"></script>
         <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbyR-rCqDpBzP9zzkO1A8fqX3cRm8P9722R0YPQFyF41C0LG17Q/exec'
-            const form = document.forms['sentMessage']
+            // const scriptURL = 'https://script.google.com/macros/s/AKfycbyR-rCqDpBzP9zzkO1A8fqX3cRm8P9722R0YPQFyF41C0LG17Q/exec'
+            // const form = document.forms['sentMessage']
           
-            form.addEventListener('submit', e => {  
-                e.preventDefault()  
-                fetch(scriptURL, { method: 'POST', mode: 'cors', headers:{'Access-Control-Allow-Origin':'*'}, body: new FormData(form)})  
-                    .then(response => console.log('Success!', response))  
-                    .catch(error => console.error('Error!', error.message))  
-                })  
+            // form.addEventListener('submit', e => {  
+            //     e.preventDefault()  
+            //     fetch(scriptURL, { method: 'POST', body: new FormData(form)})  
+            //         .then(response => console.log('Success!', response))  
+            //         .catch(error => console.error('Error!', error.message))  
+            //     })  
           </script>
         
         <script src="js/cbpAnimatedHeader.js"></script>
