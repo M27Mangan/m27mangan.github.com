@@ -2,13 +2,13 @@
  Scripts initialization
  --------------------------------------------- */
  ;(function ($) {
-   'use strict'
+   'use strict';
  
    $(window).load(function () {
      // Page loader
-     $('.page-loader div').delay(0).fadeOut()
-     $('.page-loader').delay(200).fadeOut('slow')
-   })
+     $('.page-loader div').delay(0).fadeOut();
+     $('.page-loader').delay(200).fadeOut('slow');
+   });
    $(document).ready(function() {
     // Check for click events on the navbar burger icon
     $(".navbar-burger").click(function() {
@@ -19,8 +19,8 @@
   });
    $(document).ready(function () {
      $('.newLogo').click(function () {
-       $('.fall-off').addClass('hinge')
-     })
+       $('.fall-off').addClass('hinge');
+     });
  
      var theCurrentYear = new Date().getFullYear();
      $('.currentYear').html(theCurrentYear);
@@ -33,9 +33,9 @@
      // })
  
      setTimeout(function () {
-       $('.home-content').css('background-color', 'transparent')
+       $('.home-content').css('background-color', 'transparent');
        // $('.navbar-right').css('animation-delay','4s');
-     }, 2000)
+     }, 2000);
  
      // $('.homebutton').mouseover(function () {
      //   $('.homebutton i').removeClass('ion-ios-paperplane-outline')
@@ -48,22 +48,22 @@
 
  
      /* ---------- RESIZE TRIGGER ---------- */
-     $(window).trigger('resize')
+     $(window).trigger('resize');
  
      /* ---------- PARALLAX ---------- */
-     $(window).stellar()
+     $(window).stellar();
  
      /* ---------- COUNTER ---------- */
      $('.timer').counterUp({
        delay: 10,
        time: 5000
-     })
+     });
  
      /* ---------- Masnory ---------- */
  
      $('.grid').isotope({
        itemSelector: '.grid-item'
-     })
+     });
  
      /* ---------- ANIMSITION - TRANSITION BETWEEN PAGES ---------- */
      $('.animsition').animsition({
@@ -83,17 +83,17 @@
        overlay: false,
        overlayClass: 'animsition-overlay-slide',
        overlayParentElement: 'body'
-     })
+     });
  
      $(function () {
        $('a.page-scroll').bind('click', function (event) {
-         var $anchor = $(this)
+         var $anchor = $(this);
          $('html, body').stop().animate({
            scrollTop: $($anchor.attr('href')).offset().top
-         }, 1500, 'easeInOutExpo')
-         event.preventDefault()
-       })
-     })
+         }, 1500, 'easeInOutExpo');
+         event.preventDefault();
+       });
+     });
  
      /* ---------- Clients Slider ---------- */
     //  $('#owl-clients').owlCarousel({
@@ -139,19 +139,19 @@
        removalDelay: 160,
        preloader: false,
        fixedContentPos: false
-     })
+     });
  
      /* ---------- ROTATE TEXT ---------- */
      $('.rotate').textrotator({
        animation: 'flipUp', // You can pick the way it animates when rotating through words. Options are dissolve (default), fade, flip, flipUp, flipCube, flipCubeUp and spin.
        separator: ',', // If you don't want commas to be the separator, you can define a new separator (|, &, * etc.) by yourself using this field.
        speed: 2000 // How many milliseconds until the next word show.
-     })
-   })
+     });
+   });
  
    $(window).resize(function () {
-     height100_init()
-   })
+     height100_init();
+   });
  
    /* ---------------------------------------------
     PAGE SCROLL
@@ -162,7 +162,7 @@
      easing: 'easeInOutQuad',
      updateURL: false,
      offset: 70
-   })
+   });
  
    // Highlight the top nav as scrolling occurs
   //  $('body').scrollspy({
@@ -172,8 +172,8 @@
    // Closes the Responsive Menu on Menu Item Click
  
    $('.navbar-collapse ul li a:not(.dropdown-toggle)').click(function () {
-     $('.navbar-toggle:visible').click()
-   })
+     $('.navbar-toggle:visible').click();
+   });
  
    /* ---------------------------------------------
     HEIGHT 100%
@@ -181,8 +181,8 @@
  
    function height100_init () {
      (function ($) {
-       $('.height-full').height($(window).height() + 100)
-     })(jQuery)
+       $('.height-full').height($(window).height() + 100);
+     })(jQuery);
    }
  
    /* ---------------------------------------------
@@ -198,8 +198,8 @@
      {
        mobile: false // trigger animations on mobile devices (default is true)
      }
-   )
-   wow.init()
+   );
+   wow.init();
  
    /* ---------- CONTACT FORM VALIDATION ---------- */
  
@@ -259,17 +259,17 @@
     //    })
     //  },
      filter: function () {
-       return $(this).is(':visible')
+       return $(this).is(':visible');
      }
-   })
+   });
  
    $('a[data-toggle="tab"]').click(function (e) {
-     e.preventDefault()
-     $(this).tab('show')
-   })
+     e.preventDefault();
+     $(this).tab('show');
+   });
  
    /* When clicking on Full hide fail/success boxes */
    $('#name').focus(function () {
-     $('#success').html('')
-   })
- })(jQuery)
+     $('#success').html('');
+   });
+ })(jQuery);

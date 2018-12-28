@@ -432,7 +432,13 @@
                           <div class="column is-half-tablet is-offset-1-tablet col-xs-12 col-md-6 col-md-offset-1">
                               <!-- <div class="light-overlay"></div> -->
                               <div class=" light-overlay"  style="background: url(img/restaurant-coffee-cup-table-sml.jpg); position: relative; ">
-                                  <form name="sentMessage" id="contactForm" novalidate class="contact-form" action="https://script.google.com/macros/s/AKfycbyR-rCqDpBzP9zzkO1A8fqX3cRm8P9722R0YPQFyF41C0LG17Q/exec">
+                                  <form name="sentMessage" id="contactForm" novalidate class="contact-form" method="POST" action="https://script.google.com/macros/s/AKfycbyR-rCqDpBzP9zzkO1A8fqX3cRm8P9722R0YPQFyF41C0LG17Q/exec">
+                                    <div class="control-group" id="honeypotGroup">
+                                        <div class="form-group controls">
+                                            <label class="sr-only">Keep this field blank</label>
+                                            <input id="honeypot" type="text" name="honeypot" value="" />
+                                        </div>
+                                    </div>
                                       <div class="control-group">
                                           <div class="form-group col-md-12 controls">
                                               <input type="text" class="form-control" placeholder="Name" id="name" name="name" required data-validation-required-message="Please enter your name.">
@@ -465,9 +471,12 @@
                                           </div>
                                       </div>
                                       <br>
-                                      <div id="success"></div>
+                                      <div id="success" style="display:none;">
+                                        <p class="sub-title is-size-5"><strong><em>Thanks</em> for contacting us!
+                                            We will get back to you soon!</strong></p>
+                                      </div>
                                       <div class="">
-                                          <div class="column is-full col-md-12 margin-top40">
+                                          <div class="column is-full  margin-top40">
                                               <button type="submit" class="btn btn-b-dark">Submit</button>
                                           </div>
                                       </div>
@@ -495,24 +504,11 @@
           </div>
 
         <!-- JS -->
-        <!-- <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script> -->
         <script src="js/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/formdata-polyfill@3.0.13/formdata.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@3.0.0/dist/fetch.umd.min.js"></script>
-        <script>
-            // const scriptURL = 'https://script.google.com/macros/s/AKfycbyR-rCqDpBzP9zzkO1A8fqX3cRm8P9722R0YPQFyF41C0LG17Q/exec'
-            // const form = document.forms['sentMessage']
-          
-            // form.addEventListener('submit', e => {  
-            //     e.preventDefault()  
-            //     fetch(scriptURL, { method: 'POST', body: new FormData(form)})  
-            //         .then(response => console.log('Success!', response))  
-            //         .catch(error => console.error('Error!', error.message))  
-            //     })  
-          </script>
-        
-        <script src="js/form-submission-handler.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@3.0.0/dist/fetch.umd.min.js"></script>    
+        <script data-cfasync="false" type="text/javascript" src="form-submission-handler.js"></script>
         <script src="js/cbpAnimatedHeader.js"></script>
         <script src="js/classie.js"></script>
         <script src="js/jqBootstrapValidation.js"></script>

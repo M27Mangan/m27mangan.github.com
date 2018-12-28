@@ -64,11 +64,11 @@
      var form = event.target;
      var data = getFormData(form);         // get the values submitted in the form
  
-     /* OPTION: Remove this comment to enable SPAM prevention, see README.md
+     /* OPTION: Remove this comment to enable SPAM prevention, see README.md*/
      if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submitted
        return false;
      }
-     */
+     
  
      if( data.email && !validEmail(data.email) ) {   // if email is not valid show error
        var invalidEmail = form.querySelector(".email-invalid");
@@ -86,11 +86,12 @@
        xhr.onreadystatechange = function() {
            console.log(xhr.status, xhr.statusText);
            console.log(xhr.responseText);
-           var formElements = form.querySelector(".form-elements")
+           var formElements = form.querySelector(".form-elements");
+           //TODO: add fadeout methods instead
            if (formElements) {
              formElements.style.display = "none"; // hide form
            }
-           var thankYouMessage = form.querySelector(".thankyou_message");
+           var thankYouMessage = form.selectElementById("#success");
            if (thankYouMessage) {
              thankYouMessage.style.display = "block";
            }
@@ -111,7 +112,7 @@
      for (var i = 0; i < forms.length; i++) {
        forms[i].addEventListener("submit", handleFormSubmit, false);
      }
-   };
+   }
    document.addEventListener("DOMContentLoaded", loaded, false);
  
    function disableAllButtons(form) {

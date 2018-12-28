@@ -3764,6 +3764,9 @@ video#bgvid {
     position: relative;
 }
 
+#honeypotGroup, #honeypotGroup *{display: none;}
+
+
 /*---------- FOOTER ----------*/
 
 #footer {
