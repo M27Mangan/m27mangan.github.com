@@ -52,7 +52,7 @@
  
      // add form-specific values into the data
      formData.formDataNameOrder = JSON.stringify(fields);
-     formData.formGoogleSheetName = form.dataset.sheet || "Sheet1"; // default sheet name
+     formData.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
      formData.formGoogleSendEmail = form.dataset.email || ""; // no email by default
  
      console.log(formData);
@@ -71,11 +71,11 @@
      
  
      if( data.email && !validEmail(data.email) ) {   // if email is not valid show error
-       var invalidEmail = form.querySelector(".email-invalid");
-       if (invalidEmail) {
-         invalidEmail.style.display = "block";
-         return false;
-       }
+      //  var invalidEmail = form.querySelector(".email-invalid");
+      //  if (invalidEmail) {
+      //    invalidEmail.style.display = "block";
+      //    return false;
+      //  }
      } else {
        disableAllButtons(form);
        var url = form.action;
@@ -91,7 +91,7 @@
            if (formElements) {
              formElements.style.display = "none"; // hide form
            }
-           var thankYouMessage = form.selectElementById("#success");
+           var thankYouMessage = document.getElementById("success");
            if (thankYouMessage) {
              thankYouMessage.style.display = "block";
            }
@@ -108,7 +108,7 @@
    function loaded() {
      console.log("Contact form submission handler loaded successfully.");
      // bind to the submit event of our form
-     var forms = document.querySelectorAll("form.sentMessage");
+     var forms = document.querySelectorAll("form#contactForm");
      for (var i = 0; i < forms.length; i++) {
        forms[i].addEventListener("submit", handleFormSubmit, false);
      }
