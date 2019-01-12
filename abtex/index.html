@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
   <!-- <link rel="stylesheet" href="styles/index.processed.css"> -->
 
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" /> -->
@@ -173,11 +174,53 @@
       <label for="get">Get my code</label>
          </div>
          <div class="col-md-6">
-            <div id=htmlcode><table border=0 cellpadding=0 cellspacing=0 style=font-family:Arial,Helvetica,sans-serif;line-height:1.5;font-size:12px><tr><td style=vertical-align:top><a href=http://www.abtex.com/ target=_blank><img src=https://mangan.io/abtex/img/Abtex-logo-TAG-color.png style=margin-right:10px;height:auto;width:170px id=companyLogo title="Abtex Logo"></a><td style="vertical-align:top;padding-left:8px;border-left:2px solid"><table border=0 cellpadding=0 cellspacing=0 style=font-size:11px><tr><td><span id=name style=font-weight:600;font-size:12px;color:#222>Jason Saner</span><tr><td><em><span id=position>President</span></em><tr><td><table border=0 cellpadding=0 cellspacing=0 style=margin-top:5px;font-size:11px><tr><td><span style=font-weight:600;color:#222><a href=http://www.abtex.com style=text-decoration:none;color:inherit>www.abtex.com</a></span><tr><td><span>89 Main Street | Dresden, New York 14441</span><tr><td><span id=tel><strong>D: </strong>(XXX) XXX-XXXX</span> <span style=font-weight:600;color:#222>O: </span><span>(315)&nbsp;536-7403</span> <span id=mobile><strong>C: </strong>(XXX) XXX-XXXX</span></table><tr><td><table border=0 cellpadding=0 cellspacing=0 style=margin-top:5px><tr><td style=padding-right:3px align=center><a href=https://www.linkedin.com/company/abtex-corporation/ target=_blank><div style=width:20px;height:20px;border-radius:3px;font-size:12px;line-height:18px;background-color:#ee3525><img src=https://s3.eu-central-1.amazonaws.com/mysigmail/icons/linkedin.png style=vertical-align:middle alt=""width=12px></div></a><td style=padding-right:3px align=center><a href="https://www.youtube.com/user/abtexcorporation?feature=results_main"target=_blank><div style=width:20px;height:20px;border-radius:3px;font-size:12px;line-height:18px;background-color:#ee3525><img src=https://s3.eu-central-1.amazonaws.com/mysigmail/icons/youtube.png style=vertical-align:middle alt=""width=12px></div></a></table></table></table></div>
+            <div id="htmlcode"><table border="0"cellpadding="0"cellspacing="0"style="font-family:Arial,Helvetica,sans-serif;line-height:1.5;font-size:12px"><tr><td style="vertical-align:top"><a href="http://www.abtex.com/"target="_blank"><img src="https://mangan.io/abtex/img/Abtex-logo-TAG-color.png"style="margin-right:10px;height:auto;width:170px"id="companyLogo"title="Abtex Logo"></a><td style="vertical-align:top;padding-left:8px;border-left:2px solid"><table border="0"cellpadding="0"cellspacing="0"style="font-size:11px"><tr><td><span id="name"style="font-weight:600;font-size:12px;color:#222">Jason Saner</span><tr><td><em><span id="position">President</span></em><tr><td><table border="0"cellpadding="0"cellspacing="0"style="margin-top:5px;font-size:11px"><tr><td><span style="font-weight:600;color:#222"><a href="http://www.abtex.com"style="text-decoration:none;color:inherit">www.abtex.com</a></span><tr><td><span>89 Main Street | Dresden, New York 14441</span><tr><td><span id="tel"><strong>D: </strong>(XXX) XXX-XXXX</span> <span style="font-weight:600;color:#222">O: </span><span>(315) 536-7403</span> <span id="mobile"><strong>C: </strong>(XXX) XXX-XXXX</span></table><tr><td><table border="0"cellpadding="0"cellspacing="0"style="margin-top:5px"><tr><td style="padding-right:3px"align="center"><a href="https://www.linkedin.com/company/abtex-corporation/"target="_blank"><div style="width:20px;height:20px;border-radius:3px;font-size:12px;line-height:18px;background-color:#ee3525"><img src="https://s3.eu-central-1.amazonaws.com/mysigmail/icons/linkedin.png"style="vertical-align:middle"alt=""width="12px"></div></a><td style="padding-right:3px"align="center"><a href="https://www.youtube.com/user/abtexcorporation?feature=results_main"target="_blank"><div style="width:20px;height:20px;border-radius:3px;font-size:12px;line-height:18px;background-color:#ee3525"><img src="https://s3.eu-central-1.amazonaws.com/mysigmail/icons/youtube.png"style="vertical-align:middle"alt=""width="12px"></div></a></table></table></table></div>
          </div>
+      </div>
       </br>
       </br>
-      
+      <div class="row" id="clientSelect">
+         <div class="col-md-6 col-md-offset-3 col-sm-offset-0 col-sm-12">
+               <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                     <div class="panel panel-default">
+                       <div class="panel-heading" role="tab" id="headingOne">
+                         <h4 class="panel-title">
+                           <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                 Adding signature to Gmail
+                           </a>
+                         </h4>
+                       </div>
+                       <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                         <div class="panel-body">
+                              <h2>Add or change a signature</h2>
+                              <p>You can put up to 10,000 characters in your signature.</p>
+                              <ol>
+                                <li>Open <a href="https://mail.google.com/" target="_blank" rel="noopener">Gmail</a>.</li>
+                                <li>In the top right, click Settings <img src="//lh3.googleusercontent.com/iK54sRM8QELKETjD5PyshCuCL_NAhpUYkHhJVIAoY3NAoV3zNncQJvgvylkSZzVsdXJW=w18-h18" width="18" height="18" alt="Settings" title="Settings"> <img src="//lh3.googleusercontent.com/tBULk9Mb_rJwZCqpiX4HV29lHDNjFZ5W5sQPwWslEmv0CwuR_cG3sz_KtEemC48YZ8s=w18-h18" width="18" height="18" alt="and then" title="and then"> <strong>Settings</strong>.</li>
+                                <li>In the "Signature" section, add your signature text in the box. If you want, you can format your message by adding an image or changing the text style.</li>
+                                <li>At the bottom of the page, click <strong>Save Changes</strong>.</li>
+                              </ol>
+                              <p><strong>See the official article on <a href="https://support.google.com/mail/answer/8395?co=GENIE.Platform%3DDesktop&hl=en&oco=1" target="_blank">Google.com</a> for more information.</strong></p>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="panel panel-default">
+                       <div class="panel-heading" role="tab" id="headingTwo">
+                         <h4 class="panel-title">
+                           <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                 Adding signature to Outlook
+                           </a>
+                         </h4>
+                       </div>
+                       <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                         <div class="panel-body">
+                              <p><strong>See the official article on <a href="https://support.office.com/en-us/article/create-and-add-a-signature-to-messages-8ee5d4f4-68fd-464a-a1c1-0e1c80bb27f2#bkmk_logo" target="_blank">Microsoft.com</a> for details related to your specific version of outlook.</strong></p>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+         </div>
+      </div>
       </br>
       
    
@@ -187,20 +230,20 @@
        <div class="modal-content">
          <div class="modal-header">
            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-           <h4 class="modal-title">Modal title</h4>
+           <h4 class="modal-title">Email Signature Code:</h4>
          </div>
          <div class="modal-body">
            <textarea id="codeOutput" autocomplete="off" rows="10" class="el-textarea__inner" style="min-height: 33px; z-index: auto; position: relative; line-height: 21px; font-size: 14px; transition: none 0s ease 0s; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);" spellcheck="true"></textarea>
          </div>
          <div class="modal-footer">
            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="copy"><span>Copy</span></button>
+            <button type="button" class="btn btn-primary" id="copy"  data-clipboard-target="#codeOutput"><span>Copy</span></button>
          </div>
        </div><!-- /.modal-content -->
      </div><!-- /.modal-dialog -->
    </div><!-- /.modal -->
       <p class="sign-off">Questions or problems?</p>
-      </div>
+      
 
 <script type="text/javascript">
 
@@ -254,6 +297,17 @@ function getFunction(){
  	
 		}
       </script>
+      <script type="text/javascript">
+         var btn = document.getElementById('copy');
+         var clipboard = new ClipboardJS(copy);
+         clipboard.on('success', function(e) {
+             console.log(e);
+             alert('Email Signature Copied to Clipboard!');
+         });
+         clipboard.on('error', function(e) {
+             console.log(e);
+         });
+         </script>
 <!-- <script src="scripts/index.js"></script> -->
 </body>
 
