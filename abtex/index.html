@@ -153,15 +153,15 @@
          <label for="pos">Position </label>
          <input type="text" name="pos" id="pos" required placeholder="Employee"><br/>
          <label for="tel">Direct # </label>
-         <input type="text" name="tl" id="tl" required placeholder="xxx.xxx.xxxx"> <br>
+         <input type="text" name="tl" id="tl" required placeholder="(XXX) XXX-XXXX"> <br>
          <label for="mobile">Cell # (optional) </label>
-         <input type="text" name="mb" id="mb" required placeholder="xxx.xxx.xxx"> <br> <br>
+         <input type="text" name="mb" id="mb" required placeholder="(XXX) XXX-XXXX"> <br> <br>
          <fieldset>
             <legend>Select Logo Type:</legend>
             <input id="abtexPlain" type="radio" name="logo" value="standard" checked>
             <label for="abtexPlain">Abtex</label><br>
-            <input id="abtexDX" type="radio" name="logo" value="dx">
-            <label for="abtexDX">Abtex DX</label><br>
+            <input id="abtexDS" type="radio" name="logo" value="ds">
+            <label for="abtexDS">Abtex DS</label><br>
          </fieldset>
       </fieldset>
       </br>
@@ -173,7 +173,7 @@
       <label for="get">Get my code</label>
          </div>
          <div class="col-md-6">
-            <div id=htmlcode><table border=0 cellpadding=0 cellspacing=0 style=font-family:Arial,Helvetica,sans-serif;line-height:1.5;font-size:12px><tr><td style=vertical-align:top><a href=http://www.abtex.com/ target=_blank><img src=https://mangan.io/abtex/img/Abtex-logo-TAG-color.png style=margin-right:10px;height:auto;width:170px id=companyLogo title="Abtex Logo"></a><td style="vertical-align:top;padding-left:8px;border-left:2px solid"><table border=0 cellpadding=0 cellspacing=0 style=font-size:11px><tr><td><span id=name style=font-weight:600;font-size:12px;color:#222>Jason Saner</span><tr><td><em><span id=position>President</span></em><tr><td><table border=0 cellpadding=0 cellspacing=0 style=margin-top:5px;font-size:11px><tr><td><span style=font-weight:600;color:#222><a href=http://www.abtex.com style=text-decoration:none;color:inherit>www.abtex.com</a></span><tr><td><span>89 Main Street | Dresden, New York 14441</span><tr><td><span id=tel><strong>D: </strong>xxx.xxx.xxxx</span> <span style=font-weight:600;color:#222>O: </span><span>315.536.7403</span> <span id=mobile><strong>C: </strong>xxx.xxx.xxxx</span></table><tr><td><table border=0 cellpadding=0 cellspacing=0 style=margin-top:5px><tr><td style=padding-right:3px align=center><a href=https://www.linkedin.com/company/abtex-corporation/ target=_blank><div style=width:20px;height:20px;border-radius:3px;font-size:12px;line-height:18px;background-color:#ee3525><img src=https://s3.eu-central-1.amazonaws.com/mysigmail/icons/linkedin.png style=vertical-align:middle alt=""width=12px></div></a><td style=padding-right:3px align=center><a href="https://www.youtube.com/user/abtexcorporation?feature=results_main"target=_blank><div style=width:20px;height:20px;border-radius:3px;font-size:12px;line-height:18px;background-color:#ee3525><img src=https://s3.eu-central-1.amazonaws.com/mysigmail/icons/youtube.png style=vertical-align:middle alt=""width=12px></div></a></table></table></table></div>
+            <div id=htmlcode><table border=0 cellpadding=0 cellspacing=0 style=font-family:Arial,Helvetica,sans-serif;line-height:1.5;font-size:12px><tr><td style=vertical-align:top><a href=http://www.abtex.com/ target=_blank><img src=https://mangan.io/abtex/img/Abtex-logo-TAG-color.png style=margin-right:10px;height:auto;width:170px id=companyLogo title="Abtex Logo"></a><td style="vertical-align:top;padding-left:8px;border-left:2px solid"><table border=0 cellpadding=0 cellspacing=0 style=font-size:11px><tr><td><span id=name style=font-weight:600;font-size:12px;color:#222>Jason Saner</span><tr><td><em><span id=position>President</span></em><tr><td><table border=0 cellpadding=0 cellspacing=0 style=margin-top:5px;font-size:11px><tr><td><span style=font-weight:600;color:#222><a href=http://www.abtex.com style=text-decoration:none;color:inherit>www.abtex.com</a></span><tr><td><span>89 Main Street | Dresden, New York 14441</span><tr><td><span id=tel><strong>D: </strong>(XXX) XXX-XXXX</span> <span style=font-weight:600;color:#222>O: </span><span>(315)&nbsp;536-7403</span> <span id=mobile><strong>C: </strong>(XXX) XXX-XXXX</span></table><tr><td><table border=0 cellpadding=0 cellspacing=0 style=margin-top:5px><tr><td style=padding-right:3px align=center><a href=https://www.linkedin.com/company/abtex-corporation/ target=_blank><div style=width:20px;height:20px;border-radius:3px;font-size:12px;line-height:18px;background-color:#ee3525><img src=https://s3.eu-central-1.amazonaws.com/mysigmail/icons/linkedin.png style=vertical-align:middle alt=""width=12px></div></a><td style=padding-right:3px align=center><a href="https://www.youtube.com/user/abtexcorporation?feature=results_main"target=_blank><div style=width:20px;height:20px;border-radius:3px;font-size:12px;line-height:18px;background-color:#ee3525><img src=https://s3.eu-central-1.amazonaws.com/mysigmail/icons/youtube.png style=vertical-align:middle alt=""width=12px></div></a></table></table></table></div>
          </div>
       </br>
       </br>
@@ -210,7 +210,7 @@ $('input:radio[name="logo"]').change(
         if ($(this).val() == 'standard') {
 						src = "https://mangan.io/abtex/img/Abtex-logo-TAG-color.png";
         }
-        else if ($(this).val() == 'dx') {
+        else if ($(this).val() == 'ds') {
 						src = "https://mangan.io/abtex/img/Abtex-DS-TAG-color.png";
         }
         else{
