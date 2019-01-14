@@ -174,7 +174,7 @@
       <label for="get">Get my code</label>
          </div>
          <div class="col-md-6">
-            <div id="htmlcode"><table border="0"cellpadding="0"cellspacing="0"style="font-family:Arial,Helvetica,sans-serif;line-height:1.5;font-size:12px"><tr><td style="vertical-align:top"><a href="http://www.abtex.com/"target="_blank"><img src="https://mangan.io/abtex/img/Abtex-logo-TAG-color.png"style="margin-right:10px;height:auto;width:170px"id="companyLogo"title="Abtex Logo"></a><td style="vertical-align:top;padding-left:8px;border-left:2px solid"><table border="0"cellpadding="0"cellspacing="0"style="font-size:11px"><tr><td><span id="name"style="font-weight:600;font-size:12px;color:#222">Jason Saner</span><tr><td><em><span id="position">President</span></em><tr><td><table border="0"cellpadding="0"cellspacing="0"style="margin-top:5px;font-size:11px"><tr><td><span style="font-weight:600;color:#222"><a href="http://www.abtex.com"style="text-decoration:none;color:inherit">www.abtex.com</a></span><tr><td><span>89 Main Street | Dresden, New York 14441</span><tr><td><span id="tel"><strong>D: </strong>(XXX) XXX-XXXX</span> <span style="font-weight:600;color:#222">O: </span><span>(315) 536-7403</span> <span id="mobile"><strong>C: </strong>(XXX) XXX-XXXX</span></table><tr><td><table border="0"cellpadding="0"cellspacing="0"style="margin-top:5px"><tr><td style="padding-right:3px"align="center"><a href="https://www.linkedin.com/company/abtex-corporation/"target="_blank"><div style="width:20px;height:20px;border-radius:3px;font-size:12px;line-height:18px;background-color:#ee3525"><img src="https://s3.eu-central-1.amazonaws.com/mysigmail/icons/linkedin.png"style="vertical-align:middle"alt=""width="12px"></div></a><td style="padding-right:3px"align="center"><a href="https://www.youtube.com/user/abtexcorporation?feature=results_main"target="_blank"><div style="width:20px;height:20px;border-radius:3px;font-size:12px;line-height:18px;background-color:#ee3525"><img src="https://s3.eu-central-1.amazonaws.com/mysigmail/icons/youtube.png"style="vertical-align:middle"alt=""width="12px"></div></a></table></table></table></div>
+            <div id="htmlcode"><table border="0"cellpadding="0"cellspacing="0"style="font-family:Arial,Helvetica,sans-serif;line-height:1.5;font-size:12px; background-color:none!important;"><tr><td style="vertical-align:top"><a href="http://www.abtex.com/"target="_blank"><img src="https://mangan.io/abtex/img/Abtex-logo-TAG-color.png"style="margin-right:10px;height:auto;width:170px"id="companyLogo"title="Abtex Logo"></a><td style="vertical-align:top;padding-left:8px;border-left:2px solid"><table border="0"cellpadding="0"cellspacing="0"style="font-size:11px"><tr><td><span id="name"style="font-weight:600;font-size:12px;color:#222">Jason Saner</span><tr><td><em><span id="position">President</span></em><tr><td><table border="0"cellpadding="0"cellspacing="0"style="margin-top:5px;font-size:11px"><tr><td><span style="font-weight:600;color:#222"><a href="http://www.abtex.com"style="text-decoration:none;color:inherit">www.abtex.com</a></span><tr><td><span>89 Main Street | Dresden, New York 14441</span><tr><td><span id="tel"><strong>D: </strong>(XXX) XXX-XXXX</span> <span style="font-weight:600;color:#222">O: </span><span>(315) 536-7403</span> <span id="mobile"><strong>C: </strong>(XXX) XXX-XXXX</span></table><tr><td><table border="0"cellpadding="0"cellspacing="0"style="margin-top:5px"><tr><td style="padding-right:3px"align="center"><a href="https://www.linkedin.com/company/abtex-corporation/"target="_blank"><div style="width:20px;height:20px;border-radius:3px;font-size:12px;line-height:18px;background-color:#ee3525"><img src="https://s3.eu-central-1.amazonaws.com/mysigmail/icons/linkedin.png"style="vertical-align:middle"alt=""width="12px"></div></a><td style="padding-right:3px"align="center"><a href="https://www.youtube.com/user/abtexcorporation?feature=results_main"target="_blank"><div style="width:20px;height:20px;border-radius:3px;font-size:12px;line-height:18px;background-color:#ee3525"><img src="https://s3.eu-central-1.amazonaws.com/mysigmail/icons/youtube.png"style="vertical-align:middle"alt=""width="12px"></div></a></table></table></table></div>
                <br>
                <hr>
                <br>
@@ -231,7 +231,9 @@
          </div>
          <div class="modal-footer">
            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="copy"  data-clipboard-target="#codeOutput"><span>Copy</span></button>
+           <button type="button" class="btn btn-primary" id="copyVisual"  data-clipboard-target="#htmlcode"><span>Copy Signature</span></button>
+            <button type="button" class="btn btn-primary" id="copyMarkup"  data-clipboard-target="#codeOutput"><span>Copy Code (Advanced)</span></button>
+            
          </div>
        </div><!-- /.modal-content -->
      </div><!-- /.modal-dialog -->
@@ -292,14 +294,23 @@ function getFunction(){
 		}
       </script>
       <script type="text/javascript">
-         var btn = document.getElementById('copy');
-         var clipboard = new ClipboardJS(copy);
+         var markupBtn = document.getElementById('copyMarkup');
+         var visualBtn = document.getElementById('copyVisual');
+         var clipboard = new ClipboardJS(copyMarkup);
+         var clipboardVisual = new ClipboardJS(copyVisual);
          clipboard.on('success', function(e) {
              console.log(e);
              alert('Email Signature Copied to Clipboard!');
          });
          clipboard.on('error', function(e) {
              console.log(e);
+         });
+         clipboardVisual.on('success', function(e) {
+             console.log(el);
+             alert('Email Signature Copied to Clipboard!');
+         });
+         clipboardVisual.on('error', function(e) {
+             console.log(el);
          });
          </script>
 <!-- <script src="scripts/index.js"></script> -->
