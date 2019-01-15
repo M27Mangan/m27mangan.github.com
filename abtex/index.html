@@ -154,9 +154,10 @@
          <label for="pos">Position </label>
          <input type="text" name="pos" id="pos" required placeholder="Employee"><br/>
          <label for="tel">Direct # </label>
-         <input type="text" name="tl" id="tl" required placeholder="(XXX) XXX-XXXX"> <br>
+         <input type="text" name="tl" id="tl" required placeholder="315 555 5555" onkeydown="javascript:backspacerDOWN(this,event);" onkeyup="javascript:backspacerUP(this,event);"> <br>
          <label for="mobile">Cell # (optional) </label>
-         <input type="text" name="mb" id="mb" required placeholder="(XXX) XXX-XXXX"> <br> <br>
+         <input type="text" name="mb" id="mb" required placeholder="315 555 5555" onkeydown="javascript:backspacerDOWN(this,event);" onkeyup="javascript:backspacerUP(this,event);"> <br>
+         <small>Please enter your phone numbers as "1234567890", the field will automatically format your entry to match company standards.</small> <br><br>
          <fieldset>
             <legend>Select Logo Type:</legend>
             <input id="abtexPlain" type="radio" name="logo" value="standard" checked>
@@ -167,11 +168,13 @@
       </fieldset>
       </br>
       </br>
-      <input type="checkbox" id="review" name="review" onchange="reviewFunction()" />
+      <button class="btn btn-primary" onclick="reviewFunction()">Update Preview</button>
+      <button class="btn btn-success" onclick="getFunction()"  data-toggle="modal" data-target="#myModal">Get My Signature</button>
+      <!-- <input type="checkbox" id="review" name="review" onchange="reviewFunction()" />
       <label for="review">Preview</b></label></br>
       
       <input type="checkbox" id="get" name="get" onchange="getFunction()"  data-toggle="modal" data-target="#myModal"/>
-      <label for="get">Get my code</label>
+      <label for="get">Get my code</label> -->
          </div>
          <div class="col-md-6">
             <div id="htmlcode" style="background-color: #ffffff"><table border="0"cellpadding="0"cellspacing="0"style="font-family:Arial,Helvetica,sans-serif;line-height:1.5;font-size:12px; background-color:none!important;" bg-color="#ffffff"><tr><td bg-color="#ffffff" style="vertical-align:top"><a href="http://www.abtex.com/"target="_blank"><img src="https://mangan.io/abtex/img/Abtex-logo-TAG-color.png"style="margin-right:10px;height:auto;width:170px"id="companyLogo"title="Abtex Logo"></a><td style="vertical-align:top;padding-left:8px;border-left:2px solid"><table bg-color="#ffffff" border="0"cellpadding="0"cellspacing="0"style="font-size:11px"><tr><td><span id="name"style="font-weight:600;font-size:12px;color:#222">Jason Saner</span><tr><td><em><span id="position">President</span></em><tr><td><table bg-color="#ffffff" border="0"cellpadding="0"cellspacing="0"style="margin-top:5px;font-size:11px"><tr><td><span style="font-weight:600;color:#222"><a href="http://www.abtex.com"style="text-decoration:none;color:inherit">www.abtex.com</a></span><tr><td><span>89 Main Street | Dresden, New York 14441</span><tr><td><span id="tel"><strong>D: </strong>(XXX) XXX-XXXX</span> <span style="font-weight:600;color:#222">O: </span><span>(315) 536-7403</span> <span id="mobile"><strong>C: </strong>(XXX) XXX-XXXX</span></table><tr><td><table border="0"cellpadding="0"cellspacing="0"style="margin-top:5px"><tr><td style="padding-right:3px"align="center"><a href="https://www.linkedin.com/company/abtex-corporation/"target="_blank"><div style="width:20px;height:20px;border-radius:3px;font-size:12px;line-height:18px;background-color:#ee3525; min-width:18px;"><img src="https://s3.eu-central-1.amazonaws.com/mysigmail/icons/linkedin.png"style="vertical-align:middle"alt=""width="12px"></div></a><td style="padding-right:3px"align="center"><a href="https://www.youtube.com/user/abtexcorporation?feature=results_main"target="_blank"><div style="width:20px;height:20px;border-radius:3px;font-size:12px;line-height:18px;background-color:#ee3525; min-width:18px;"><img src="https://s3.eu-central-1.amazonaws.com/mysigmail/icons/youtube.png"style="vertical-align:middle"alt=""width="12px"></div></a></table></table></table></div>
@@ -228,13 +231,13 @@
            <h4 class="modal-title">Email Signature Code:</h4>
          </div>
          <div class="modal-body">
-           <textarea id="codeOutput" autocomplete="off" rows="10" class="el-textarea__inner" style="min-height: 33px; z-index: auto; position: relative; line-height: 21px; font-size: 14px; transition: none 0s ease 0s; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);" spellcheck="true"></textarea>
+            <div id="finalCopyOutput" style="background-color: #ffffff"></div>
+           <textarea id="codeOutput" autocomplete="off" rows="10" class="el-textarea__inner sr-only" style="min-height: 33px; z-index: auto; position: relative; line-height: 21px; font-size: 14px; transition: none 0s ease 0s; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);" spellcheck="true"></textarea>
          </div>
          <div class="modal-footer">
            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
            <button type="button" class="btn btn-primary" id="copyVisual"  data-clipboard-target="#htmlcode"><span>Copy Signature</span></button>
-            <button type="button" class="btn btn-primary" id="copyMarkup"  data-clipboard-target="#codeOutput"><span>Copy Code (Advanced)</span></button>
-            
+            <!-- <button type="button" class="btn btn-primary" id="copyMarkup"  data-clipboard-target="#codeOutput"><span>Copy Code (Advanced)</span></button> -->
          </div>
        </div><!-- /.modal-content -->
      </div><!-- /.modal-dialog -->
@@ -243,6 +246,177 @@
       
 
 <script type="text/javascript">
+
+var zChar = new Array(' ', '(', ')', '-', '.');
+var maxphonelength = 13;
+var phonevalue1;
+var phonevalue2;
+var cursorposition;
+
+function ParseForNumber1(object) {
+    phonevalue1 = ParseChar(object.value, zChar);
+}
+
+function ParseForNumber2(object) {
+    phonevalue2 = ParseChar(object.value, zChar);
+}
+
+function backspacerUP(object, e) {
+    if (e) {
+        e = e
+    } else {
+        e = window.event
+    }
+    if (e.which) {
+        var keycode = e.which
+    } else {
+        var keycode = e.keyCode
+    }
+
+    ParseForNumber1(object)
+
+    if (keycode >= 48) {
+        ValidatePhone(object)
+    }
+}
+
+function backspacerDOWN(object, e) {
+    if (e) {
+        e = e
+    } else {
+        e = window.event
+    }
+    if (e.which) {
+        var keycode = e.which
+    } else {
+        var keycode = e.keyCode
+    }
+    ParseForNumber2(object)
+}
+
+function GetCursorPosition() {
+
+    var t1 = phonevalue1;
+    var t2 = phonevalue2;
+    var bool = false
+    for (i = 0; i < t1.length; i++) {
+        if (t1.substring(i, 1) != t2.substring(i, 1)) {
+            if (!bool) {
+                cursorposition = i
+                bool = true
+            }
+        }
+    }
+}
+
+function ValidatePhone(object) {
+
+    var p = phonevalue1
+
+    p = p.replace(/[^\d]*/gi, "")
+
+    if (p.length < 3) {
+        object.value = p
+    } else if (p.length == 3) {
+        pp = p;
+        d4 = p.indexOf('(')
+        d5 = p.indexOf(')')
+        if (d4 == -1) {
+            pp = "(" + pp;
+        }
+        if (d5 == -1) {
+            pp = pp + ")";
+        }
+        object.value = pp;
+    } else if (p.length > 3 && p.length < 7) {
+        p = "(" + p;
+        l30 = p.length;
+        p30 = p.substring(0, 4);
+        p30 = p30 + ")"
+
+        p31 = p.substring(4, l30);
+        pp = p30 + p31;
+
+        object.value = pp;
+
+    } else if (p.length >= 7) {
+        p = "(" + p;
+        l30 = p.length;
+        p30 = p.substring(0, 4);
+        p30 = p30 + ")"
+
+        p31 = p.substring(4, l30);
+        pp = p30 + p31;
+
+        l40 = pp.length;
+        p40 = pp.substring(0, 8);
+        p40 = p40 + "-"
+
+        p41 = pp.substring(8, l40);
+        ppp = p40 + p41;
+
+        object.value = ppp.substring(0, maxphonelength);
+    }
+
+    GetCursorPosition()
+
+    if (cursorposition >= 0) {
+        if (cursorposition == 0) {
+            cursorposition = 2
+        } else if (cursorposition <= 2) {
+            cursorposition = cursorposition + 1
+        } else if (cursorposition <= 5) {
+            cursorposition = cursorposition + 2
+        } else if (cursorposition == 6) {
+            cursorposition = cursorposition + 2
+        } else if (cursorposition == 7) {
+            cursorposition = cursorposition + 4
+            e1 = object.value.indexOf(')')
+            e2 = object.value.indexOf('-')
+            if (e1 > -1 && e2 > -1) {
+                if (e2 - e1 == 4) {
+                    cursorposition = cursorposition - 1
+                }
+            }
+        } else if (cursorposition < 11) {
+            cursorposition = cursorposition + 3
+        } else if (cursorposition == 11) {
+            cursorposition = cursorposition + 1
+        } else if (cursorposition >= 12) {
+            cursorposition = cursorposition
+        }
+
+        var txtRange = object.createTextRange();
+        txtRange.moveStart("character", cursorposition);
+        txtRange.moveEnd("character", cursorposition - object.value.length);
+        txtRange.select();
+    }
+
+}
+
+function ParseChar(sStr, sChar) {
+    if (sChar.length == null) {
+        zChar = new Array(sChar);
+    } else zChar = sChar;
+
+    for (i = 0; i < zChar.length; i++) {
+        sNewStr = "";
+
+        var iStart = 0;
+        var iEnd = sStr.indexOf(sChar[i]);
+
+        while (iEnd != -1) {
+            sNewStr += sStr.substring(iStart, iEnd);
+            iStart = iEnd + 1;
+            iEnd = sStr.indexOf(sChar[i], iStart);
+        }
+        sNewStr += sStr.substring(sStr.lastIndexOf(sChar[i]) + 1, sStr.length);
+
+        sStr = sNewStr;
+    }
+
+    return sNewStr;
+}
 
 $('input:radio[name="logo"]').change(
     function(){
@@ -266,8 +440,8 @@ var preview = document.getElementById('review'),
     tel = document.getElementById('tel'),
     mobile = document.getElementById('mobile');
 function reviewFunction(){
-		if (preview.checked) {
-         
+		//if (preview.checked) {
+         console.log('Update Preview button active');
       fullname.innerHTML = nm.value;
       position.innerHTML = pos.value;
          if(tl.value !=''){
@@ -280,38 +454,41 @@ function reviewFunction(){
          } else{
             mobile.innerHTML = '';
          }
-      }
+      //}
 }
 
 function getFunction(){
-		if (document.getElementById('get').checked) { 
+		//if (document.getElementById('get').checked) { 
+         console.log('Get My Code button active');
 		var e=document.getElementById("htmlcode");
-         var el=document.getElementById("codeOutput");
-      el.innerHTML=e.innerHTML;
+         var codeFinal=document.getElementById("codeOutput");
+         var visualFinal=document.getElementById("finalCopyOutput");
+         codeFinal.innerHTML=e.innerHTML; visualFinal.innerHTML=e.innerHTML;
+
       
          
- 		}
+ 		//}
  	
 		}
       </script>
       <script type="text/javascript">
-         var markupBtn = document.getElementById('copyMarkup');
-         var visualBtn = document.getElementById('copyVisual');
-         var clipboard = new ClipboardJS(copyMarkup);
-         var clipboardVisual = new ClipboardJS(copyVisual);
-         clipboard.on('success', function(e) {
-             console.log(e);
+         // var markupBtn = document.getElementById('copyMarkup');
+         // var visualBtn = document.getElementById('copyVisual');
+         // var clipboard = new ClipboardJS('markupBtn');
+         var clipboardVisual = new ClipboardJS('#copyVisual');
+         // clipboard.on('success', function(codeFinal) {
+         //     console.log(codeFinal);
+         //     alert('Email Signature Copied to Clipboard!');
+         // });
+         // clipboard.on('error', function(codeFinal) {
+         //     console.log(codeFinal);
+         // });
+         clipboardVisual.on('success', function(visualFinal) {
+             console.log(visualFinal);
              alert('Email Signature Copied to Clipboard!');
          });
-         clipboard.on('error', function(e) {
-             console.log(e);
-         });
-         clipboardVisual.on('success', function(e) {
-             console.log(el);
-             alert('Email Signature Copied to Clipboard!');
-         });
-         clipboardVisual.on('error', function(e) {
-             console.log(el);
+         clipboardVisual.on('error', function(visualFinal) {
+             console.log(visualFinal);
          });
          </script>
 <!-- <script src="scripts/index.js"></script> -->
