@@ -200,12 +200,12 @@
         // then delete it
         $(this).remove();
         // add an <a> tag to whats left ie. the folder name
-        folderAndName.wrapInner("<a href='#' />");
+        folderAndName.wrapInner("<a href='#' class='directory_single'/>");
         // then put the inner <ul> back
         folderAndName.append(backupOfThisFolder);
 
         // now add a slideToggle to the <a> we just added
-        folderAndName.find("a").click(function(e) {
+        folderAndName.find("directory_single").click(function(e) {
           $(this)
             .siblings("ul")
             .slideToggle("slow");
