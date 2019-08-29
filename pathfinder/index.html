@@ -205,7 +205,7 @@
         folderAndName.append(backupOfThisFolder);
 
         // now add a slideToggle to the <a> we just added
-        folderAndName.find("directory_single").click(function(e) {
+        folderAndName.find("a.directory_single").click(function(e) {
           $(this)
             .siblings("ul")
             .slideToggle("slow");
