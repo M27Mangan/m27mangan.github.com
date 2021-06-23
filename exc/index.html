@@ -21,7 +21,6 @@
 
       h1 {
         text-align: center;
-        color: rgb(238, 53, 37);
         font-family: Corbel;
         Arial;
         margin-top: 40px
@@ -159,10 +158,12 @@
             <label for="pro">Pronouns <small>(Optional)</small></label>
             <input type="text" name="pro" id="pro" required placeholder="Pronouns"><br />
             <label for="pos">Position </label>
-            <input type="text" name="pos" id="pos" required placeholder="Employee"><br />
+            <input type="text" name="pos" id="pos" required placeholder="Position/Title"><br />
+            <label for="pos">Division <small>(Optional)</small></label>
+            <input type="text" name="div" id="div" required placeholder="Departme"><br />
             <label for="tel">Office # </label>
             <input type="text" name="tl" id="tl" required placeholder="315 555 5555" onkeydown="javascript:backspacerDOWN(this,event);" onkeyup="javascript:backspacerUP(this,event);"> <br>
-            <label for="mobile">Cell # (optional) </label>
+            <label for="mobile">Cell # <small>(Optional)</small></label>
             <input type="text" name="mb" id="mb" required placeholder="315 555 5555" onkeydown="javascript:backspacerDOWN(this,event);" onkeyup="javascript:backspacerUP(this,event);"> <br>
             <small>Please enter your phone numbers as "1234567890", the field will automatically format your entry to match company standards.</small> <br><br>
             <label>Show Legal Disclaimer?</label>
@@ -174,6 +175,17 @@
               <input id="univera" type="radio" name="logo" value="ds">
               <label for="univera">Univera</label><br>
               <input id="lbs" type="radio" name="logo" value="ds">
+              <label for="lbs">Lifetime Benefit Solution</label><br>
+            </fieldset>
+            <fieldset>
+              <legend>Select Legal Text:</legend>
+              <input id="excellus" type="checkbox" name="confidentiality" value="standard" checked>
+              <label for="excellus">Excellus</label><br>
+              <input id="univera" type="checkbox" name="tpa" value="ds">
+              <label for="univera">Univera</label><br>
+              <input id="lbs" type="checkbox" name="cobra" value="ds">
+              <label for="lbs">Lifetime Benefit Solution</label><br>
+              <input id="lbs" type="checkbox" name="reimbursement" value="ds">
               <label for="lbs">Lifetime Benefit Solution</label><br>
             </fieldset>
           </fieldset>
@@ -191,12 +203,12 @@
           <div id="htmlcode" style="background-color: #ffffff">
             <table border="0" cellpadding="0" cellspacing="0" style="font-family:Arial,Helvetica,sans-serif;line-height:1.5;font-size:12px; background-color:none!important;" bg-color="#ffffff">
               <tr>
-                <td bg-color="#ffffff" style="vertical-align:top"><a href="http://www.abtex.com/" target="_blank"><img src="http://www.abtex.com/images/Abtex-logo-TAG-color.png" style="padding:right;margin-right:10px;height:auto;width:170px" id="companyLogo" title="Abtex Logo"></a>
+                <td bg-color="#ffffff" style="vertical-align:top"><a href="http://www.excellusbcbs.com/" target="_blank"><img src="https://www.excellusbcbs.com/o/excellus-bcbs-theme/images/color_schemes/excellus/logo.svg" style="padding:right;margin-right:10px;height:auto;width:170px" id="companyLogo" title="Excellus BlueCross BlueShield Logo"></a>
                 </td>
                 <td style="vertical-align:top;padding-left:8px;border-left:2px solid">
                   <table bg-color="#ffffff" border="0" cellpadding="0" cellspacing="0" style="font-size:11px">
                     <tr>
-                      <td><span id="name" style="font-weight:600;font-size:12px;color:#222">Jason Saner</span></td>
+                      <td><span id="name" style="font-weight:600;font-size:12px;color:#222">Jane Doe</span></td>
                     </tr>
                     <tr>
                       <td><em><span id="position">President</span></em></td>
@@ -205,27 +217,16 @@
                       <td>
                         <table bg-color="#ffffff" border="0" cellpadding="0" cellspacing="0" style="margin-top:5px;font-size:11px">
                           <tr>
-                            <td><span style="font-weight:600;color:#222"><a href="http://www.abtex.com" style="text-decoration:none!important;color:#222!important"><span
-                                                                style="color:#222">www.abtex.com</span></a></span>
+                            <td><span style="font-weight:600;color:#222"><a href="http://www.excellusbcbs.com" style="text-decoration:none!important;color:#222!important"><span
+                                                                style="color:#222">www.excellusbcbs.com</span></a></span>
                             </td>
                           </tr>
                           <tr>
-                            <td><span>89 Main Street | Dresden, New York 14441</span></td>
+                            <td><span>165 Court Street | Rochester, New York 14647</span></td>
                           </tr>
                           <tr>
                             <td><span id="tel"><strong>D: </strong>(XXX) XXX-XXXX</span> <span style="font-weight:600;color:#222">O: </span><span>(315) 536-7403</span>
                               <span id="mobile"><strong>C: </strong>(XXX) XXX-XXXX</span>
-                            </td>
-                          </tr>
-                        </table>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <table border="0" cellpadding="0" cellspacing="0" style="margin-top:5px">
-                          <tr>
-                            <td style="padding-right:3px" align="center"><a href="https://www.linkedin.com/" target="_blank"><img src="http://www.abtex.com/images/linkedin-icon.png" style="vertical-align:middle" alt="LinkedIn Icon" width="20px" height="20px;"></a></td>
-                            <td style="padding-right:3px" align="center"><a href="https://www.youtube.com/" target="_blank"><img src="http://www.abtex.com/images/youtube-icon.png" style="vertical-align:middle" alt="YouTube Icon" width="20px" height="20px;"></a>
                             </td>
                           </tr>
                         </table>
@@ -277,9 +278,9 @@
             </div>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
-      </div><!-- /.modal -->
+      </div>
       <p class="sign-off">Questions or problems?</p>
-
+    </div>
 
       <script type="text/javascript">
 
@@ -523,17 +524,7 @@
         }
       </script>
       <script type="text/javascript">
-        // var markupBtn = document.getElementById('copyMarkup');
-        // var visualBtn = document.getElementById('copyVisual');
-        // var clipboard = new ClipboardJS('markupBtn');
         var clipboardVisual = new ClipboardJS('#copyVisual');
-        // clipboard.on('success', function(codeFinal) {
-        //     console.log(codeFinal);
-        //     alert('Email Signature Copied to Clipboard!');
-        // });
-        // clipboard.on('error', function(codeFinal) {
-        //     console.log(codeFinal);
-        // });
         clipboardVisual.on('success', function (visualFinal) {
           console.log(visualFinal);
           alert('Email Signature Copied to Clipboard!');
