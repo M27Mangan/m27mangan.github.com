@@ -122,19 +122,12 @@
         background-size: 75% auto;
       }
     </style>
-    <h2>Collapsible Directory List</h2>
-
+    <h2>Collapsible Character List</h2>
     <div class="box">
       <ul class="directory-list">
         <li>
           Heroes
           <ul>
-            <li>
-              Level1
-              <ul>
-                <li>fuck_you.html</li>
-              </ul>
-            </li>
             <li>
               Level2
               <ul>
@@ -145,16 +138,23 @@
                 <li><a href="../pathfinder/l2/stennis.htm">stennis.htm</a></li>
               </ul>
             </li>
-            <li>
               Level3
-              <!-- <ul>
+              <ul>
                 <li><a href="../pathfinder/l3/aerith.htm">aerith.htm</a></li>
                 <li><a href="../pathfinder/l3/archbog.htm">archbog.htm</a></li>
-                <li><a href="../pathfinder/l3/emira.htm">emira.htm</a></li> -->
-              <!-- <li><a href="/l3/evindal.htm">evindal.htm</a></li> -->
-              <!-- <li>elwin.htm</li> -->
-              <!-- <li><a href="../pathfinder/l3/stennis.htm">stennis.htm</a></li>
-              </ul> -->
+                <li><a href="../pathfinder/l3/elwin.htm">elwin.htm</a></li>
+                <li><a href="../pathfinder/l3/emira.htm">emira.htm</a></li>
+                <li><a href="../pathfinder/l3/stennis.htm">stennis.htm</a></li>
+              </ul>
+            </li>
+            <li>
+              Level6
+              <ul>
+                <li><a href="../pathfinder/l6/aerith.htm">aerith.htm</a></li>
+                <li><a href="../pathfinder/l6/archbog.htm">archbog.htm</a></li>
+                <li><a href="../pathfinder/l6/emira.htm">emira.htm</a></li>
+                <li><a href="../pathfinder/l6/stennis.htm">stennis.htm</a></li>
+              </ul>
             </li>
             <li>TBD</li>
           </ul>
@@ -164,9 +164,9 @@
           <!-- <ul>
             <li>pages
             <ul>
-                <li>about.tpl</li>
-                <li>pricing.tpl</li>
-                <li>contact.tpl</li>
+                <li>Player Guide.tpl</li>
+                <li>SandPoint Map</li>
+                <li>Items &amp; Equipment</li>
                 <li>home.tpl</li>
                 <li>features.tpl</li>
             </ul>
@@ -176,8 +176,6 @@
             <li>footer.tpl</li>
         </ul> -->
         </li>
-        <!-- <li>index.php</li>
-        <li>style.css</li> -->
       </ul>
     </div>
 
@@ -186,53 +184,37 @@
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
+      type="text/javascript"
     ></script>
     <script type="text/javascript">
-      // get all folders in our .directory-list
-      var allFolders = $(".directory-list li > ul");
-      allFolders.each(function() {
-        // add the folder class to the parent <li>
-        var folderAndName = $(this).parent();
-        folderAndName.addClass("folder");
-
-        // backup this inner <ul>
-        var backupOfThisFolder = $(this);
-        // then delete it
-        $(this).remove();
-        // add an <a> tag to whats left ie. the folder name
-        folderAndName.wrapInner("<a href='#' class='directory_single'/>");
-        // then put the inner <ul> back
-        folderAndName.append(backupOfThisFolder);
-
-        // now add a slideToggle to the <a> we just added
-        folderAndName.find("a.directory_single").click(function(e) {
-          $(this)
-            .siblings("ul")
-            .slideToggle("slow");
-          e.preventDefault();
-        });
-      });
-    </script>
-    <script>
       window.jQuery ||
         document.write(
           '<script src="js/vendor/jquery-3.4.1.min.js"><\/script>'
         );
-    </script>
-    <!-- <script src="js/plugins.js"></script> -->
-    <!-- <script src="js/main.js"></script> -->
+        // get all folders in our .directory-list
+          var allFolders = $(".directory-list li > ul");
+          allFolders.each(function () {
+            // add the folder class to the parent <li>
+            var folderAndName = $(this).parent();
+            folderAndName.addClass("folder");
 
-    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-    <script>
-      window.ga = function() {
-        ga.q.push(arguments);
-      };
-      ga.q = [];
-      ga.l = +new Date();
-      ga("create", "UA-XXXXX-Y", "auto");
-      ga("set", "transport", "beacon");
-      ga("send", "pageview");
+            // backup this inner <ul>
+            var backupOfThisFolder = $(this);
+            // then delete it
+            $(this).remove();
+            // add an <a> tag to whats left ie. the folder name
+            folderAndName.wrapInner("<a href='#' class='directory_single'/>");
+            // then put the inner <ul> back
+            folderAndName.append(backupOfThisFolder);
+
+            // now add a slideToggle to the <a> we just added
+            folderAndName.find("a.directory_single").click(function (e) {
+              $(this)
+                .siblings("ul")
+                .slideToggle("slow");
+              e.preventDefault();
+            });
+          });
     </script>
-    <!-- <script src="https://www.google-analytics.com/analytics.js" async></script> -->
   </body>
 </html>

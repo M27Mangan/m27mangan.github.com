@@ -12,11 +12,6 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
-  <!-- <link rel="stylesheet" href="styles/index.processed.css"> -->
-
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" /> -->
-  <!-- <link rel="stylesheet" href="styles/style.css">
-  <link rel="stylesheet" href="styles/responsive.css"> -->
   <style type="text/css">
       @import url('https://fonts.googleapis.com/css?family=Raleway');
 
@@ -142,7 +137,6 @@
 </head>
 <body>
    <div class="container">
-
       <h1 class="title">Email signature generator</h1>
       </br>
       <div class="row">
@@ -317,16 +311,16 @@ function ParseForNumber2(object){
   phonevalue2 = ParseChar(object.value, zChar);
 }
 
-function backspacerUP(object,e) { 
-  if(e){ 
-    e = e 
+function backspacerUP(object,e) {
+  if(e){
+    e = e
   } else {
-    e = window.event 
-  } 
-  if(e.which){ 
-    var keycode = e.which 
+    e = window.event
+  }
+  if(e.which){
+    var keycode = e.which
   } else {
-    var keycode = e.keyCode 
+    var keycode = e.keyCode
   }
 
   ParseForNumber1(object)
@@ -336,19 +330,19 @@ function backspacerUP(object,e) {
   }
 }
 
-function backspacerDOWN(object,e) { 
-  if(e){ 
-    e = e 
+function backspacerDOWN(object,e) {
+  if(e){
+    e = e
   } else {
-    e = window.event 
-  } 
-  if(e.which){ 
-    var keycode = e.which 
+    e = window.event
+  }
+  if(e.which){
+    var keycode = e.which
   } else {
-    var keycode = e.keyCode 
+    var keycode = e.keyCode
   }
   ParseForNumber2(object)
-} 
+}
 
 function GetCursorPosition(){
 
@@ -387,21 +381,21 @@ function ValidatePhone(object){
     }
     object.value = pp;
   } else if(p.length>3 && p.length < 7){
-    p ="(" + p; 
+    p ="(" + p;
     l30=p.length;
     p30=p.substring(0,4);
-    p30=p30+") " 
+    p30=p30+") "
 
     p31=p.substring(4,l30);
     pp=p30+p31;
 
-    object.value = pp; 
+    object.value = pp;
 
   } else if(p.length >= 7){
-    p ="(" + p; 
+    p ="(" + p;
     l30=p.length;
     p30=p.substring(0,4);
-    p30=p30+") " 
+    p30=p30+") "
 
     p31=p.substring(4,l30);
     pp=p30+p31;
@@ -427,11 +421,11 @@ function ValidatePhone(object){
       cursorposition = cursorposition + 3
     } else if (cursorposition == 5) {
       cursorposition = cursorposition + 3
-    } else if (cursorposition == 6) { 
-      cursorposition = cursorposition + 3 
-    } else if (cursorposition == 7) { 
-      cursorposition = cursorposition + 4 
-    } else if (cursorposition == 8) { 
+    } else if (cursorposition == 6) {
+      cursorposition = cursorposition + 3
+    } else if (cursorposition == 7) {
+      cursorposition = cursorposition + 4
+    } else if (cursorposition == 8) {
       cursorposition = cursorposition + 4
       e1=object.value.indexOf(')')
       e2=object.value.indexOf('-')
@@ -463,7 +457,7 @@ function ValidatePhone(object){
 function ParseChar(sStr, sChar)
 {
 
-  if (sChar.length == null) 
+  if (sChar.length == null)
   {
     zChar = new Array(sChar);
   }
