@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- TODO: Required psedo elements -->
+<!-- TODO: Accessibility Check -->
+<!-- TODO: Signature Type, Fields Toggle (.is__social, .is__app, .is__lite)-->
+<!-- TODO: Image URLs -->
   <head>
 
     <!--  Meta  -->
     <meta charset="UTF-8" />
-    <title>Excellus - Signature Generator</title>
+    <title>Signature Generator</title>
 
     <!--  Styles  -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
     <style type="text/css">
       @import url('https://fonts.googleapis.com/css?family=Raleway');
 
       body {
-        background-color: #f7f7f7;
+        /* background-color: #f7f7f7; */
       }
 
       h1 {
@@ -146,96 +150,258 @@
   </head>
 
   <body>
-    <div class="container">
+    <header>
+      <a href="#0"><img src="" alt="" class=""/></a>
+    </header>
+    <div class="container mb-5 bg-white">
       <h1 class="title">Email signature generator</h1>
       </br>
-      <div class="row">
-        <div class="col-md-6">
-          <fieldset>
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <fieldset class="form-group">
+            <legend>Select Signature Type</legend>
+            <div class="form-check">
+              <input class="form-check-input" id="signatureSocial" type="radio" name="signatureVersion" value="SocialVersion" checked>
+              <label class="form-check-label" for="signatureSocial">Social (Excellus/Univera Only)</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" id="signatureApp" type="radio" name="signatureVersion" value="AppVersion">
+              <label class="form-check-label" for="signatureApp">App Badge</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" id="signatureLite" type="radio" name="signatureVersion" value="LiteVersion">
+              <label class="form-check-label" for="signatureLite">Lite</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-group">
             <legend>Employee Information</legend>
-            <label for="nm">Name</label>
-            <input type="text" name="nm" id="nm" required placeholder="First Last"><br />
-            <label for="pro">Pronouns <small>(Optional)</small></label>
-            <input type="text" name="pro" id="pro" required placeholder="Pronouns"><br />
-            <label for="pos">Position </label>
-            <input type="text" name="pos" id="pos" required placeholder="Position/Title"><br />
-            <label for="pos">Division <small>(Optional)</small></label>
-            <input type="text" name="div" id="div" required placeholder="Departme"><br />
-            <label for="tel">Office # </label>
-            <input type="text" name="tl" id="tl" required placeholder="315 555 5555" onkeydown="javascript:backspacerDOWN(this,event);" onkeyup="javascript:backspacerUP(this,event);"> <br>
-            <label for="mobile">Cell # <small>(Optional)</small></label>
-            <input type="text" name="mb" id="mb" required placeholder="315 555 5555" onkeydown="javascript:backspacerDOWN(this,event);" onkeyup="javascript:backspacerUP(this,event);"> <br>
-            <small>Please enter your phone numbers as "1234567890", the field will automatically format your entry to match company standards.</small> <br><br>
-            <label>Show Legal Disclaimer?</label>
-            <input type="checkbox" />
-            <fieldset>
+            <div class="form-group">
+              <label for="nme">Name</label>
+              <input class="form-control" type="text" name="nme" id="nme" required placeholder="First Last">
+            </div>
+            <div class="form-group">
+              <label for="pro">Pronouns <small>(Optional)</small></label>
+              <input class="form-control" type="text" name="pro" id="pro" placeholder="Pronouns">
+            </div>
+            <div class="form-group">
+              <label for="pos">Title </label>
+              <input class="form-control" type="text" name="pos" id="pos" required placeholder="Position/Title">
+            </div>
+            <div class="form-group">
+              <label for="dpt">Division <small>(Optional)</small></label>
+              <input class="form-control" type="text" name="dpt" id="dpt" placeholder="Departmet">
+            </div>
+            <div class="form-group">
+              <label for="tel">Office # </label>
+              <input class="form-control" type="text" name="tel" id="tel" required placeholder="315 555 5555" onkeydown="javascript:backspacerDOWN(this,event);" onkeyup="javascript:backspacerUP(this,event);" maxlength="14">
+            </div>
+            <div class="form-group">
+              <label for="mobile">Cell # <small>(Optional)</small></label>
+              <input class="form-control" type="text" name="mbl" id="mbl" required placeholder="315 555 5555" onkeydown="javascript:backspacerDOWN(this,event);" onkeyup="javascript:backspacerUP(this,event);" maxlength="14">
+              <p><small>Please enter your phone numbers as "1234567890", the field will automatically format your entry to match company standards.</small></p>
+            </div>
+
+            <fieldset class="form-group">
               <legend>Select Logo Type:</legend>
-              <input id="excellus" type="radio" name="logo" value="standard" checked>
-              <label for="excellus">Excellus</label><br>
-              <input id="univera" type="radio" name="logo" value="ds">
-              <label for="univera">Univera</label><br>
-              <input id="lbs" type="radio" name="logo" value="ds">
-              <label for="lbs">Lifetime Benefit Solution</label><br>
+              <div class="form-check">
+                <input class="form-check-input" id="excellus" type="radio" name="logo" value="ex" checked>
+                <label class="form-check-label" for="excellus">Excellus</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" id="univera" type="radio" name="logo" value="uv">
+                <label class="form-check-label" for="univera">Univera</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" id="lbs" type="radio" name="logo" value="lbs">
+                <label class="form-check-label" for="lbs">Lifetime Benefit Solution</label>
+              </div>
             </fieldset>
-            <fieldset>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="showHideLegalFields" value=""/>
+              <label class="form-check-label" for="showHideLegalFields">Show Legal Disclaimer? <small>(Optional)</small></label>
+            </div>
+            <fieldset id="legalDisclaimerSection" class="form-group" style="display: none;">
               <legend>Select Legal Text:</legend>
-              <input id="excellus" type="checkbox" name="confidentiality" value="standard" checked>
-              <label for="excellus">Excellus</label><br>
-              <input id="univera" type="checkbox" name="tpa" value="ds">
-              <label for="univera">Univera</label><br>
-              <input id="lbs" type="checkbox" name="cobra" value="ds">
-              <label for="lbs">Lifetime Benefit Solution</label><br>
-              <input id="lbs" type="checkbox" name="reimbursement" value="ds">
-              <label for="lbs">Lifetime Benefit Solution</label><br>
+              <div class="form-check">
+                <input class="form-check-input" id="legalConf" type="checkbox" name="confidentiality" value="conf">
+                <label class="form-check-label" for="legalConf">Confidentiality</label><br>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" id="legalTPA" type="checkbox" name="tpa" value="tpa">
+                <label class="form-check-label" for="legalTPA">TPA</label><br>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" id="legalCOBRA" type="checkbox" name="cobra" value="cobra">
+                <label class="form-check-label" for="legalCOBRA">COBRA</label><br>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" id="legalReimb" type="checkbox" name="reimbursement" value="ra">
+                <label class="form-check-label" for="legalReimb">Reimbursements</label><br>
+              </div>
             </fieldset>
           </fieldset>
-          </br>
-          </br>
-          <button class="btn btn-primary" onclick="reviewFunction()">Update Preview</button>
-          <button class="btn btn-success" onclick="getFunction()" data-toggle="modal" data-target="#myModal">Get My Signature</button>
-          <!-- <input type="checkbox" id="review" name="review" onchange="reviewFunction()" />
-      <label for="review">Preview</b></label></br>
-
-      <input type="checkbox" id="get" name="get" onchange="getFunction()"  data-toggle="modal" data-target="#myModal"/>
-      <label for="get">Get my code</label> -->
         </div>
-        <div class="col-md-6">
-          <div id="htmlcode" style="background-color: #ffffff">
-            <table border="0" cellpadding="0" cellspacing="0" style="font-family:Arial,Helvetica,sans-serif;line-height:1.5;font-size:12px; background-color:none!important;" bg-color="#ffffff">
-              <tr>
-                <td bg-color="#ffffff" style="vertical-align:top"><a href="http://www.excellusbcbs.com/" target="_blank"><img src="https://www.excellusbcbs.com/o/excellus-bcbs-theme/images/color_schemes/excellus/logo.svg" style="padding:right;margin-right:10px;height:auto;width:170px" id="companyLogo" title="Excellus BlueCross BlueShield Logo"></a>
-                </td>
-                <td style="vertical-align:top;padding-left:8px;border-left:2px solid">
-                  <table bg-color="#ffffff" border="0" cellpadding="0" cellspacing="0" style="font-size:11px">
-                    <tr>
-                      <td><span id="name" style="font-weight:600;font-size:12px;color:#222">Jane Doe</span></td>
-                    </tr>
-                    <tr>
-                      <td><em><span id="position">President</span></em></td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <table bg-color="#ffffff" border="0" cellpadding="0" cellspacing="0" style="margin-top:5px;font-size:11px">
-                          <tr>
-                            <td><span style="font-weight:600;color:#222"><a href="http://www.excellusbcbs.com" style="text-decoration:none!important;color:#222!important"><span
-                                                                style="color:#222">www.excellusbcbs.com</span></a></span>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td><span>165 Court Street | Rochester, New York 14647</span></td>
-                          </tr>
-                          <tr>
-                            <td><span id="tel"><strong>D: </strong>(XXX) XXX-XXXX</span> <span style="font-weight:600;color:#222">O: </span><span>(315) 536-7403</span>
-                              <span id="mobile"><strong>C: </strong>(XXX) XXX-XXXX</span>
-                            </td>
-                          </tr>
-                        </table>
-                      </td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-            </table>
+        <div class="col-lg-6" style="margin-top:15px;">
+          <div style="background-color: #fefefe;">
+            <div id="htmlcodeSocial" style="background-color: transparent">
+              <table border="0" cellpadding="0" cellspacing="0" style="font-family:Arial,Helvetica,sans-serif;line-height:1.5;font-size:12px; background-color:none!important;" bg-color="transparent">
+                <tr>
+                  <td style="vertical-align:top; padding: 20px;">
+                    <table bg-color="transparent" border="0" cellpadding="0" cellspacing="0" style="font-size:11px">
+                      <tr>
+                        <td><span id="name" style="font-weight:600;font-size:12px;color:#222">Jane Doe</span></td>
+                      </tr>
+                      <tr>
+                        <td><em><span id="position">President</span></em></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <table bg-color="transparent" border="0" cellpadding="0" cellspacing="0" style="margin-top:5px;font-size:11px">
+
+                            <tr>
+                              <td><span id="replaceAddress">165 Court Street, Rochester, NY 14647</span></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <span id="tel"><strong>O: </strong>(XXX) XXX-XXXX</span>
+                                <span id="mobile"> | <strong>C: </strong>(XXX) XXX-XXXX</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><span style="font-weight:600;color:#222"><a id="replaceEmail" href=mailto:xxx" style="text-decoration:none!important;color:#222!important"><span style="color:#222">jane.doe@excellus.com</span></a></span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><span style="font-weight:600;color:#222"><a id="replaceRefURL" href="http://www.excellusbcbs.com" style="text-decoration:none!important;color:#222!important"><span style="color:#222">Excellusbcbs.com</span></a></span>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td bg-color="transparent" style="vertical-align:top; padding-top:30px; padding-bottom: 20px;"><a id="companyLogoLink" href="http://www.excellusbcbs.com/" target="_blank"><img src="https://www.excellusbcbs.com/o/excellus-bcbs-theme/images/color_schemes/excellus/logo.svg" style="padding:right;margin-right:10px;height:auto;width:170px" id="companyLogo" title="Excellus BlueCross BlueShield Logo"></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>Follow <span id="replaceRefName">Excellus BCBS</span>: <a id="fb" href="">Facebook</a> | <a id="tw" href="">Twitter</a> |<a id="li" href="">LinkedIn</a> |<a id="ig" href="">Instagram</a> |<a  id="yt"href="">YouTube</a></span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div id="htmlcodeApp" style="background-color: transparent;">
+              <table border="0" cellpadding="0" cellspacing="0" style="font-family:Arial,Helvetica,sans-serif;line-height:1.5;font-size:12px; background-color:none!important;" bg-color="transparent">
+                <tr>
+                  <td style="vertical-align:top; padding: 20px;">
+                    <table bg-color="transparent" border="0" cellpadding="0" cellspacing="0" style="font-size:11px">
+                      <tr>
+                        <td><span id="name" style="font-weight:600;font-size:12px;color:#222">Jane Doe</span></td>
+                      </tr>
+                      <tr>
+                        <td><em><span id="position">President</span></em></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <table bg-color="transparent" border="0" cellpadding="0" cellspacing="0" style="margin-top:5px;font-size:11px">
+
+                            <tr>
+                              <td><span id="replaceAddress">165 Court Street, Rochester, NY 14647</span></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <span id="tel"><strong>O: </strong>(XXX) XXX-XXXX</span>
+                                <span id="mobile"> | <strong>C: </strong>(XXX) XXX-XXXX</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><span style="font-weight:600;color:#222"><a id="replaceEmail" href=mailto:xxx" style="text-decoration:none!important;color:#222!important"><span style="color:#222">jane.doe@excellus.com</span></a></span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><span style="font-weight:600;color:#222"><a id="replaceRefURL" href="http://www.excellusbcbs.com" style="text-decoration:none!important;color:#222!important"><span style="color:#222">Excellusbcbs.com</span></a></span>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+\                      <tr>
+                        <td bg-color="transparent" style="vertical-align:top; padding-top:30px; padding-bottom: 20px;"><a id="companyLogoLink" href="http://www.excellusbcbs.com/" target="_blank"><img src="https://www.excellusbcbs.com/o/excellus-bcbs-theme/images/color_schemes/excellus/logo.svg" style="padding:right;margin-right:10px;height:auto;width:170px" id="companyLogo" title="Excellus BlueCross BlueShield Logo"></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>Download our App!</span>
+                        </td>
+                      </tr>
+                      <tr id="constSocialLinks">
+                        <td bg-color="transparent" style="vertical-align:top; padding-top: 40px;"><a id="googlePlayLink" href="#" target="_blank"><img src="#" style="padding:right;margin-right:10px;height:auto;width:170px" id="companyLogo" alt="Google Play Store Badge"></a>
+                        <td bg-color="transparent" style="vertical-align:top; padding-top: 40px;"><a id="appleAppStoreLink" href="#" target="_blank"><img src="#" style="padding:right;margin-right:10px;height:auto;width:170px" id="companyLogo" alt="Apple App Store Badge"></a>
+                        </td>
+                      </tr>
+                      <tr id="constAppBadges"></tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div id="htmlcodeLite" style="background-color: transparent">
+              <table border="0" cellpadding="0" cellspacing="0" style="font-family:Arial,Helvetica,sans-serif;line-height:1.5;font-size:12px; background-color:none!important;" bg-color="transparent">
+                <tr>
+                  <td style="vertical-align:top; padding: 20px;">
+                    <table bg-color="transparent" border="0" cellpadding="0" cellspacing="0" style="font-size:11px">
+                      <tr>
+                        <td><span id="name" style="font-weight:600;font-size:12px;color:#222">Jane Doe</span></td>
+                      </tr>
+                      <tr>
+                        <td><em><span id="position">President</span></em></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <table bg-color="transparent" border="0" cellpadding="0" cellspacing="0" style="margin-top:5px;font-size:11px">
+
+                            <tr>
+                              <td><span id="replaceAddress">165 Court Street, Rochester, NY 14647</span></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <span id="tel"><strong>O: </strong>(XXX) XXX-XXXX</span>
+                                <span id="mobile"> | <strong>C: </strong>(XXX) XXX-XXXX</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><span style="font-weight:600;color:#222"><a id="replaceEmail" href=mailto:xxx" style="text-decoration:none!important;color:#222!important"><span style="color:#222">jane.doe@excellus.com</span></a></span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><span style="font-weight:600;color:#222"><a id="replaceRefURL" href="http://www.excellusbcbs.com" style="text-decoration:none!important;color:#222!important"><span style="color:#222">Excellusbcbs.com</span></a></span>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td bg-color="transparent" style="vertical-align:top; padding-top: 40px;"><a id="companyLogoLink" href="http://www.excellusbcbs.com/" target="_blank"><img src="https://www.excellusbcbs.com/o/excellus-bcbs-theme/images/color_schemes/excellus/logo.svg" style="padding:right;margin-right:10px;height:auto;width:170px" id="companyLogo" title="Excellus BlueCross BlueShield Logo"></a>
+                        </td>
+                      </tr>
+                      <tr id="constSocialLinks">
+                        <td>
+                          <span>Follow <span id="replaceRefName">Excellus BCBS</span>: <a id="fb" href="">Facebook</a> | <a id="tw" href="">Twitter</a> |<a id="li" href="">LinkedIn</a> |<a id="ig" href="">Instagram</a> |<a  id="yt"href="">YouTube</a></span>
+                        </td>
+                      </tr>
+                      <tr id="constAppBadges"></tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="button__row my-3">
+              <button class="btn btn-primary" onclick="reviewFunction()">Update Preview</button>
+              <button class="btn btn-success" onclick="getFunction()" data-toggle="modal" data-target="#myModal">Get My Signature</button>
           </div>
           <br>
           <hr>
@@ -259,13 +425,14 @@
           </div>
         </div>
       </div>
+
       <div id="code"></div>
       <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" id="myModal">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <h4 class="modal-title">Email Signature Code:</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
             <div class="modal-body">
               <div id="finalCopyOutput" style="background-color: #ffffff"></div>
@@ -281,7 +448,23 @@
       </div>
       <p class="sign-off">Questions or problems?</p>
     </div>
-
+    <footer class="py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="disclaimer">
+              <h2>For Questions Regarding</h2>
+              <p><strong>Brand Guidlines</strong>
+                <br>Please contact <a href="#0">madison</a>, <a href="#0">julie</a>
+              </p>
+              <p><strong>App Functionality</strong>
+                <br>Please contact <a href="#0">Matt Mangan</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
       <script type="text/javascript">
 
         // <!-- Original script is revised by Eralper Yilmaz (http://www.eralper.com) -->
@@ -472,21 +655,33 @@
 
         $('input:radio[name="logo"]').change(
           function () {
-            var src = "";
-            if ($(this).val() == 'excellus') {
-              src = "http://www.excellusbcbs.com/";
+            let src;
+            let alt;
+            let link;
+            if ($(this).val() == 'ex') {
+              src = "https://www.excellusbcbs.com/o/excellus-bcbs-theme/images/color_schemes/excellus/logo.svg";
+              alt = "Excellus BlueCross BlueShield Logo";
+              link = "https://www.excellusbcbs.com/";
             }
-            else if ($(this).val() == 'univera') {
-              src = "http://www.univerahealthcare.com/";
+            else if ($(this).val() == 'uv') {
+              src = "https://www.univerahealthcare.com/o/excellus-bcbs-theme/images/logo_univera.svg";
+              alt = "Univera Healthcare Logo";
+              link = "https://www.univerahealthcare.com/";
             }
             else {
-              src = "http://www.Lifetimebenefitsolution.com/"
+              src = "https://www.lifetimebenefitsolutions.com/media/k5vlym45/lifetime-benefit-solutions-logo.png"
+              alt = "lifetime Benefit Solutions Logo";
+              link = "https://www.Lifetimebenefitsolution.com/";
             }
 
-            $('#companyLogo').attr('src', src);
+            $('#companyLogo').attr({src: src, alt: alt});
+            $('companyLogoLink').attr('href', link);
             console.log('logo changed');
           });
-        var preview = document.getElementById('review'),
+        $('#showHideLegalFields').on('change', () => {
+          $('#legalDisclaimerSection').toggle();
+        })
+          var preview = document.getElementById('review'),
           fullname = document.getElementById('name'),
           position = document.getElementById('position'),
           tel = document.getElementById('tel'),
